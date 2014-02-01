@@ -1,0 +1,223 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{{base_url}}/media/img/favicon.ico">
+
+    <title>African Stock Photography, Illustrations and Templates &mdash; African Stock Media</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/asm/media/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/asm/media/css/custom-media-queries.css" rel="stylesheet">
+    <link href="/asm/media/css/custom.css" rel="stylesheet">
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body style="">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="/asm/media/img/logo.png" alt="African Stock Media.com"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">Default</a></li>
+            <li><a href="../navbar-static-top/">Static top</a></li>
+            <li class="active"><a href="./">Fixed top</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron_2">
+
+        <div class="tabbable">
+          <ul class="nav nav-tabs registration_page">
+            <li class="active"><a href="#pane1" data-toggle="tab"><h3>Buyer</h3></a></li>
+            <li><a href="#pane2" data-toggle="tab"><h3>Seller</h3></a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="pane1" class="tab-pane active">
+              <div id="user_signup_section">     
+                <div class="row">      
+                    <div class="col-md-6 pad30">
+                      <h2 class="form-signin-heading">Join Us Today!</h2>
+
+                      Nice things to say. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                    </div>
+                    
+                    <div class="col-md-6 pad30">
+                      <form id="buyer_registration" class="form-signin" action="/asm/signup/buyer/" method="post" accept-charset="UTF-8" role="form">
+			 {% csrf_token %}
+			<div>{% if form_errors %}
+			  <h4>{{ error}}</h4>
+			  {% endif %}
+			</div>
+                        <div class="form-group">
+                          <input type="name" class="form-control" id="exampleInputName1" placeholder="Full name">
+                        </div>
+
+                            <div class="form-group">
+                              <input type="name" class="form-control" id="exampleInputUsername1" placeholder="Username">
+                            </div>                                
+
+                            <div class="form-group">
+                              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                            </div>
+
+                            <div class="form-group">    
+                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+
+                            <div class="form-group">    
+                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+                            </div>
+                       <label class="checkbox">
+                          <input type="checkbox" value="">I agree to the terms and conditions
+                        </label>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+                      </form>
+
+                    </div> <!-- END 6 COL -->  
+                </div>   <!-- END ROW --> 
+              </div>  <!-- END buyer_signup_section --> 
+
+            </div>
+            <div id="pane2" class="tab-pane">
+
+
+
+              <div id="user_signup_section">     
+                <div class="row">      
+                    <div class="col-md-6 pad30">
+                      <h2 class="form-signin-heading">Join Us Today!</h2>
+
+                      Nice things to say. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                    </div>
+                    
+                    <div class="col-md-6 pad30">
+                      <form seller_registration class="form-signin" role="form" action="{{base_url}}signup/seller/" method="post" accept-charset="UTF-8">
+			<div>{% if form_errors %}
+			  <h4>{{ error}}</h4>
+			  {% endif %}
+			</div>
+			<div class="form-group">
+                          <input name="name" type="name" class="form-control" id="exampleInputName1" placeholder="Full name">
+                        </div>
+
+                            <div class="form-group">
+                              <input name="username" type="name" class="form-control" id="exampleInputUsername1" placeholder="Username">
+                            </div>                                
+
+                            <div class="form-group">
+                              <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                            </div>
+
+                            <div class="form-group">    
+                              <input name="password1" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+
+                            <div class="form-group">    
+                              <input name="password2" type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+                            </div>
+
+                          <div class="form-group">  
+                            <select name="country" class="form-control">
+                              <option>Country</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>  
+
+                          <div class="form-group">
+                            <select name="occupation" class="form-control">
+                              <option>Specialization</option>
+                              <option>Photographer</option>
+                              <option>Illustrator</option>
+                              <option>Graphic Designer</option>
+                              <option>Digital Artist</option>
+                            </select>
+                          </div>  
+
+                        <label class="checkbox">
+                          <input type="checkbox" value="">I agree to the terms and conditions
+                        </label>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+                      </form>
+
+                    </div> <!-- END 6 COL -->  
+                </div>   <!-- END ROW --> 
+              </div>  <!-- END buyer_signup_section --> 
+
+
+
+            </div>
+          </div><!-- /.tab-content -->
+        </div><!-- /.tabbable -->
+
+      </div> <!-- jumbotron_2 -->
+      
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/asm/media/js/bootstrap.min.js"></script>
+</body>
+
+
+
+<style>
+body {
+background-color: #E7E3E3;
+}
+#user_signup_section {
+background: #FFF !important;
+}
+
+</style>

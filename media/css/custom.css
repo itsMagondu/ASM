@@ -1,0 +1,23 @@
+/* CUSTOM CSS - HEADER SECTION */
+.navbar-brand {
+float: left;
+padding: 2px 20px 0px 0px;
+font-size: 18px;
+line-height: 20px;
+height: 20px;
+}
+.jumbotron_2 {
+margin: 80px 0px;
+}
+.registration_page li a {
+text-align: center;
+}
+.nav.nav-tabs.registration_page li {
+width: 50%;
+}
+#buyer_signup_section {
+padding: 30px;
+}
+.pad30 {
+padding: 30px;	
+}
