@@ -93,23 +93,23 @@
 			  {% endif %}
 			</div>
                         <div class="form-group">
-                          <input type="name" class="form-control" id="exampleInputName1" placeholder="Full name">
+                          <input name="name" type="name" class="form-control" id="exampleInputName1" placeholder="Full name">
                         </div>
 
                             <div class="form-group">
-                              <input type="name" class="form-control" id="exampleInputUsername1" placeholder="Username">
+                              <input name="username" type="name" class="form-control" id="exampleInputUsername1" placeholder="Username">
                             </div>                                
 
                             <div class="form-group">
-                              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                              <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                             </div>
 
                             <div class="form-group">    
-                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                              <input name="password1" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                             </div>
 
                             <div class="form-group">    
-                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+                              <input name="password2" type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
                             </div>
                        <label class="checkbox">
                           <input type="checkbox" value="">I agree to the terms and conditions
@@ -135,7 +135,7 @@
                     </div>
                     
                     <div class="col-md-6 pad30">
-                      <form seller_registration class="form-signin" role="form" action="{{base_url}}signup/seller/" method="post" accept-charset="UTF-8">
+                      <form seller_registration class="form-signin" role="form" action="{{base_url}}signup/seller/#pane2" method="post" accept-charset="UTF-8">
 			<div>{% if form_errors %}
 			  <h4>{{ error}}</h4>
 			  {% endif %}
