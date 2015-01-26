@@ -1,0 +1,136 @@
+<html><head>
+<meta charset="utf-8">
+<meta name="description" content="description">
+ 
+<title>Masonry</title>
+ 
+<link rel="stylesheet" type="text/css" media="screen" href="masonry.css">
+ 
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+ 
+</head>
+ 
+<body>
+   
+	<div id="grid_container" class="masonry" style="position: relative; height: 905px;">
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/200/food/1" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/150/food/10" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/250/food/3" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/200/food/1" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/150/food/5" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/250/food/6" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/200/food/1" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/150/food/2" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/250/food/3" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/200/food/4" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/150/food/5" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/250/food/7" alt="">
+		</div>
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/200/food/1" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/150/food/2" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/250/food/10" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="">
+			<img src="http://lorempixum.com/200/200/food/9" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="position: absolute; top: 452px; left: 0px;">
+			<img src="http://lorempixum.com/200/150/food/5" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="position: absolute; top: 502px; left: 1000px;">
+			<img src="http://lorempixum.com/200/250/food/6" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="position: absolute; top: 503px; left: 200px;">
+			<img src="http://lorempixum.com/200/200/food/3" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="position: absolute; top: 503px; left: 800px;">
+			<img src="http://lorempixum.com/200/150/food/2" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="position: absolute; top: 603px; left: 0px;">
+			<img src="http://lorempixum.com/200/250/food/3" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="position: absolute; top: 603px; left: 600px;">
+			<img src="http://lorempixum.com/200/200/food/4" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="position: absolute; top: 653px; left: 400px;">
+			<img src="http://lorempixum.com/200/150/food/8" alt="">
+		</div>
+		
+		<div class="masonryImage masonry-brick" style="position: absolute; top: 654px; left: 800px;">
+			<img src="http://lorempixum.com/200/250/food/6" alt="">
+		</div>
+	
+	</div>
+   
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.masonry.min.js"></script>
+    <script src="assets/js/imagesloaded.min.js"></script>
+
+   <script>
+     $(function(){
+   
+       var $container = $('#grid_container');
+     
+       $container.imagesLoaded( function(){
+         $container.masonry({
+           itemSelector : '.masonryImage'
+         });
+       });
+     
+     });
+   </script>
+ 
+
+</body></html>
