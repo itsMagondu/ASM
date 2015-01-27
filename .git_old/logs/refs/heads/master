@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 40c19ece27af7d0879299511c69b4a2283ac104e bitnami <bitnami@linux.(none)> 1391285377 +0000	commit (initial): initial commit
+40c19ece27af7d0879299511c69b4a2283ac104e 257f8cf0b08a0d80ce172a891e2fb47a2a997380 bitnami <bitnami@linux.(none)> 1392060368 +0000	commit: Both buyer and seller signup pages now working
+257f8cf0b08a0d80ce172a891e2fb47a2a997380 55d70c9ac0ebaf5fc3796ea8945c07a7b4645707 itsMagondu <magondunjenga@gmail.com> 1392060419 +0000	commit (amend): Both buyer and seller signup pages now working
+55d70c9ac0ebaf5fc3796ea8945c07a7b4645707 ab7ae74fe665332b2b168c82e04362fa9475096a itsMagondu <magondunjenga@gmail.com> 1392061201 +0000	pull origin master: Merge made by the 'recursive' strategy.

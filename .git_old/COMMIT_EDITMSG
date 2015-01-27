@@ -1,0 +1,15 @@
+Both buyer and seller signup pages now working
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#
+# Changes to be committed:
+#   (use "git reset HEAD^1 <file>..." to unstage)
+#
+#	deleted:    #settings.py#
+#	modified:   .gitignore
+#	modified:   html/index.html
+#	modified:   siteAdmin/signup.py
+#
