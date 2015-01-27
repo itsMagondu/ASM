@@ -9,9 +9,9 @@
     <title>African Stock Photography, Illustrations and Templates &mdash; African Stock Media</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/asm/media/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/asm/media/css/custom-media-queries.css" rel="stylesheet">
-    <link href="/asm/media/css/custom.css" rel="stylesheet">
+    <link href="{{base_url}}{{media_url}}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{base_url}}{{media_url}}css/custom-media-queries.css" rel="stylesheet">
+    <link href="{{base_url}}{{media_url}}css/custom.css" rel="stylesheet">
 
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -36,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="/asm/media/img/logo.png" alt="African Stock Media.com"></a>
+          <a class="navbar-brand" href="#"><img src="{{base_url}}{{media_url}}img/logo.png" alt="African Stock Media.com"></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -86,7 +86,7 @@
                     </div>
                     
                     <div class="col-md-6 pad30">
-                      <form id="buyer_registration" class="form-signin" action="/asm/signup/buyer/" method="post" accept-charset="UTF-8" role="form">
+                      <form id="buyer_registration" class="form-signin" action="{{base_url}}signup/buyer/" method="post" accept-charset="UTF-8" role="form">
 			 {% csrf_token %}
 			<div>{% if form_errors %}
 			  <h4>{{ error}}</h4>
@@ -450,7 +450,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="/asm/media/js/bootstrap.min.js"></script>
+    <script src="{{base_url}}{{media_url}}js/bootstrap.min.js"></script>
 </body>
 
 

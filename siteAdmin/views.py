@@ -10,6 +10,7 @@ import datetime
 def home(request):
     args = {}
     args['base_url'] = settings.BASE_URL
+    args['media_url'] = settings.MEDIA_URL
     args['form_errors'] = False
     args['email_error'] = False
     args['error_message'] = ""

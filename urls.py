@@ -9,12 +9,12 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'asm.siteAdmin.views.home'),
+    url(r'^$', 'siteAdmin.views.home'),
     #url(r'^asm/', include('asm.foo.urls')),
 
    # Signup 
-    (r'^signup/buyer/$', 'asm.siteAdmin.signup.buyer'),
-    (r'^signup/seller/$', 'asm.siteAdmin.signup.seller'),
+    (r'^signup/buyer/$', 'siteAdmin.signup.buyer'),
+    (r'^signup/seller/$', 'siteAdmin.signup.seller'),
 
     # for media                                                                                                                                     
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT }),
