@@ -11,7 +11,6 @@ class UserProfile(models.Model):
     isSeller = models.BooleanField(default = False)
     credit = models.IntegerField(default = 0)
     balance = models.IntegerField(default = 0)
-    canView = models.BooleanField(default = True)
     country = models.TextField(null = True)
     
     def __unicode__(self):
