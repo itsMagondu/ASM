@@ -9,3 +9,9 @@ def Add(request):
     args['base_url'] = settings.BASE_URL
     args['media_url'] = settings.MEDIA_URL
     return render_to_response("upload.html", args)
+
+def Admin(request):
+    args = {}
+    args['base_url'] = settings.BASE_URL
+    args['media_url'] = settings.MEDIA_URL
+    return render_to_response("admin.html", args)
