@@ -15,3 +15,6 @@ def Admin(request):
     args['base_url'] = settings.BASE_URL
     args['media_url'] = settings.MEDIA_URL
     return render_to_response("admin.html", args)
+
+def upload(request):
+    pass

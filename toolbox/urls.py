@@ -1,11 +1,19 @@
+from django.contrib.auth.forms import AuthenticationForm
 from django.conf.urls import patterns, include, url
+from django.contrib.sitemaps.views import sitemap
 from django.conf import settings
 
-from django.contrib.auth.forms import AuthenticationForm
+from photologue.sitemaps import GallerySitemap, PhotoSitemap
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+
+sitemaps = {
+    'photologue_galleries': GallerySitemap,
+    'photologue_photos': PhotoSitemap,
+    }
+
 
 urlpatterns = patterns('',
     # Examples:
@@ -30,4 +38,12 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+                       
+    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
+                  
+    #Sitemap
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
+    name='django.contrib.sitemaps.views.sitemap')
+                     
 )
+

@@ -1,7 +1,13 @@
 from siteAdmin.models import UserProfile
 from django.db import models
 
-class Category():
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=100)
+    date = models.DateTimeField(auto_now_add = True)
+    active = models.BooleanField(default = None)
+
+class SubCategory(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=100)
     date = models.DateTimeField(auto_now_add = True)
@@ -16,7 +22,7 @@ class Photo(models.Model):
     uploaded_by =  models.ForeignKey('siteAdmin.UserProfile',related_name = 'uploaded')
     price = models.IntegerField(default=0)
     category = models.ForeignKey(Category)
-    subcategory = models.ForeignKey(SubCategory)
+    subcategory = models.ForeignKey(SubCategory,null=True,blank=True)
     #tags = models.TextField(null=True,blank=True)
     format = models.CharField(max_length=10,null=True)
     date = models.DateTimeField(auto_now_add = True)
@@ -31,7 +37,7 @@ class Purchases(models.Model):
     date = models.DateTimeField(auto_now_add = True)
     active = models.BooleanField(default = None)
     
-class Tag():
+class Tag(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=100)
     date = models.DateTimeField(auto_now_add = True)
