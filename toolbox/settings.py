@@ -43,8 +43,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'siteAdmin',
     'photo',
+    'photologue',
+    'sortedm2m',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -61,6 +65,7 @@ ROOT_URLCONF = 'toolbox.urls'
 
 WSGI_APPLICATION = 'toolbox.wsgi.application'
 
+SITE_ID = 1
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -104,6 +109,7 @@ LOGIN_REDIRECT_URL = BASE_URL
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'html'),
+    '/opt/projects/engine/lib/python2.7/site-packages/django/contrib/admin/templates/admin',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".                                                              
     # Always use forward slashes, even on Windows.                                                                                                    
     # Don't forget to use absolute paths, not relative paths.                                                                                         
@@ -132,3 +138,8 @@ LOGGING = {
         },
     }
 }
+
+
+#Photologue settings
+PHOTOLOGUE_GALLERY_PAGINATE_BY = 20
+PHOTOLOGUE_PHOTO_PAGINATE_BY = 20

@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.core.validators import validate_email
 from django.shortcuts import render_to_response
-from django.core.validators import email_re
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.contrib import messages
@@ -77,7 +76,7 @@ def buyer(request):
             errors['error'] = "Email Address already registered."
             return render_to_response('index.html', errors)
 
-        elif not (validateEmail(email)):
+        elif not (validate_email(email)):
             errors['form_errors'] = True
             errors['email_error'] = True
             errors['error'] = "Invalid email adress."
@@ -230,5 +229,3 @@ def seller(request):
 #if not post render error
     return HttpResponseServerError("No POST data sent.")
 
-def validateEmail(email):
-    return True if email_re.match(email) else False
