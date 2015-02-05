@@ -17,6 +17,10 @@ font-weight: 700;
 color: #000;
 font-size: 1.4em;
 }
+.information h3 {
+color: #FFF;
+}
+
 h4 {
 color: #000;
 font-weight: 600;
@@ -519,6 +523,13 @@ color: #FFF;
 
 
 /* VIEW ITEM */
+ul.blocklist li button {
+width: 100%;
+height: auto;
+max-width: 110px;
+text-align: left;
+margin-bottom: 5px;
+}
 .breaker {
 margin-top: 90px;
 }
@@ -576,5 +587,95 @@ font-weight: 700;
 span.pipe_separator {
 color: #CCC;
 margin: 0px 12px;
+}
+
+
+
+/* ERROR MESSAGES */
+.error-notice {
+  margin: 15px 0px; /* Making sure to keep some distance from all side */
+}
+
+.oaerror {
+width: 100%;
+margin: 0 auto;
+background-color: #FFFFFF;
+padding: 10px;
+border: 0px solid #eee;
+border-left-width: 2px;
+border-radius: 0px;
+margin: 0 auto;
+font-family: 'Open Sans', sans-serif;
+font-size: 13px;
+}
+
+.danger {
+  border-left-color: #d9534f; /* Left side border color */
+  background-color: rgba(217, 83, 79, 0.1); /* Same color as the left border with reduced alpha to 0.1 */
+}
+
+.danger strong {
+  color:  #d9534f;
+}
+
+.warning {
+  border-left-color: #f0ad4e;
+  background-color: rgba(240, 173, 78, 0.1);
+}
+
+.warning strong {
+  color: #f0ad4e;
+}
+
+.info {
+  border-left-color: #5bc0de;
+  background-color: rgba(91, 192, 222, 0.1);
+}
+
+.info strong {
+  color: #5bc0de;
+}
+
+.success {
+  border-left-color: #2b542c;
+  background-color: rgba(43, 84, 44, 0.1);
+}
+
+.success strong {
+  color: #2b542c;
+}
+
+
+
+
+/* UPLOAD */
+.table-sortable tbody tr {
+    cursor: move;
+}
+.btn-danger {
+color: #fff;
+background-color: #d9534f;
+border-color: #d43f3a;
+}
+.upload_item_container {
+background: rgb(255, 255, 255);
+padding: 30px;
+}
+.upload_table th, .upload_table td {
+text-align: left !important;
+}
+td.section1 {
+width: 35%;
+}
+.shorter_field {
+max-width: 170px;
+}
+.upload_new_item {
+padding: 10px;
+margin-bottom: 20px;
+}
+.upload_new_item .buttonA {
+width: 100%;
+padding: 20px;
 }
 
