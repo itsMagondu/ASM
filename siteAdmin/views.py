@@ -16,9 +16,3 @@ def home(request):
     args['error_message'] = ""
     return render_to_response("index.html", args)
     
-#@login_required
-#def home(request):
-#    args = {}
-#    args['base_url'] = settings.BASE_URL
-#    return render_to_response('home.html', args)
-

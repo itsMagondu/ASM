@@ -1,18 +1,17 @@
-from django.template import Context, loader,RequestContext
 from django.http import HttpResponseRedirect, HttpResponseServerError, HttpResponse, HttpRequest
-from django.contrib.auth.models import User
+from django.template import Context, loader,RequestContext
 from django.contrib.auth.decorators import login_required
-from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
+from django.core.validators import validate_email
+from django.shortcuts import render_to_response
+from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.contrib import messages
-from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 from django import forms
-from django.core.validators import validate_email
-from django.core.validators import email_re
-from django.shortcuts import render_to_response
 
 from django.contrib.auth.models import User
-from asm.siteAdmin.models import UserProfile
+from siteAdmin.models import UserProfile
 
 
 @csrf_exempt
@@ -77,7 +76,7 @@ def buyer(request):
             errors['error'] = "Email Address already registered."
             return render_to_response('index.html', errors)
 
-        elif not (validateEmail(email)):
+        elif not (validate_email(email)):
             errors['form_errors'] = True
             errors['email_error'] = True
             errors['error'] = "Invalid email adress."
@@ -230,5 +229,3 @@ def seller(request):
 #if not post render error
     return HttpResponseServerError("No POST data sent.")
 
-def validateEmail(email):
-    return True if email_re.match(email) else False
