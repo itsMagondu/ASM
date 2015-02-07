@@ -1,988 +1,157 @@
-{% extends "header.html" %}
+{% extends "upload_header.html" %}
 {% block title %}ASM | Upload {% endblock %}
 {% block content %}
 
-    <div class="container">
+<div class="breaker"></div>
+<div class="container upload_item_container">
+    <div class="row clearfix">
+      <div class="col-md-12 table-responsive">
+      <table class="table table-sortable upload_table" id="">
+        <thead>
+          <tr>
+            <th class="text-center">
+              Section 1
+            </th>
+            <th class="text-center">
+              Section 2
+            </th>
+            <th class="text-center">
+              Section 3
+            </th>
+              <th class="text-center">
+              Section 4
+            </th>
+          </tr>
+        </thead>
 
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron_2">
-      <h1 style="text-align:center;">Submit Item</h1>
-        <div class="tabbable">
-          <ul class="nav nav-tabs upload_tabs">
-            <li class="active"><a href="#pane1" data-toggle="tab"><h3>Photography</h3></a></li>
-            <li><a href="#pane2" data-toggle="tab"><h3>Vector Art</h3></a></li>
-            <li><a href="#pane3" data-toggle="tab"><h3>PSD Template</h3></a></li>
-          </ul>
-          <div class="tab-content">
-            <div id="pane1" class="tab-pane active">
-              <div id="user_signup_section">     
-                
-                  <form role="form">
-                    <div class="row">
-                        <div class="col-md-4 pad30">
-                          <h4>Product Files</h4>
-                          <div class="form-group">    
-                            <label for="exampleInputFile">Upload Zip File</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">Zip up your products before you upload</p>
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputFile">Upload Previw Image</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">Format - PNG or JPG only</p>
-                          </div>
+        <tbody class="ui-sortable">
 
-                          <h4>PRODUCT DETAILS</h4>
-                          <div class="form-group">
-                            <div id="sizeChoice_title" class="checkbox">
-                              <div class="row">
-                                <div class="col-md-2">SIZE</div>
-                                <div class="col-md-3">LENGTH<span>(PX)</span></div>
-                                <div class="col-md-3">WIDTH<span>(PX)</span></div>
-                                <div class="col-md-4">PRICE</div>
-                              </div>
+          <tr id="" >
+
+            <td class="section1">
+                            <div class="form-group">
+                              <h4>ITEM TITLE 5</h4>
+                              <textarea class="form-control" id="itemDescription" type="text" placeholder="Give this item a descriptive title"></textarea>
+                            </div>
+                            <div class="form-group"> 
+                              <h4>ITEM TAGS</h4>                             
+                              <input type="tags" class="form-control" id="itemTags" placeholder="Seperate each with a comma">
                             </div>
 
-                            <div id="sizeChoice1" class="checkbox">
-                              <div class="row minh_35">
-
-                                <div class="col-md-2">
-                                  <label> <input type="checkbox" value="Small">Small</label>
-                                </div>
-
-                                <div id="smallSelection" style="display:none;">
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="smallSize" placeholder="00">
-                                  </div>                                
-
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="smallSize" placeholder="00">
-                                  </div> 
-
-                                  <div class="col-md-4">                              
-                                    <select class="form-control my_small_prices">
-                                      <option>200</option>
-                                      <option>300</option>
-                                      <option>400</option>
-                                      <option>500</option>
-                                      <option>600</option>
-                                      <option>700</option>
-                                      <option>800</option>
-                                      <option>900</option>
-                                      <option>1000</option>
-                                      <option>1200</option>
-                                      <option>1400</option>
-                                      <option>1600</option>
-                                      <option>1800</option>
-                                      <option>2000</option>
-                                      <option>2200</option>
-                                      <option>2400</option>
-                                      <option>2600</option>
-                                      <option>2800</option>
-                                      <option>3000</option>
-                                      <option>3500</option>
-                                      <option>4000</option>
-                                      <option>4500</option>
-                                      <option>5000</option>
-                                      <option>5500</option>
-                                      <option>6000</option>
-                                    </select>  
-                                  </div><!-- END PRICE COL CLASS -->
-
-                                </div><!--  end smallSelection div ID -->
-                              </div><!-- END ROW -->
-                            </div> <!-- End sizeChoice1 div -->
-
-                            <div id="sizeChoice2" class="checkbox">
-                              <div class="row minh_35">
-
-                                <div class="col-md-2">
-                                  <label> <input type="checkbox" value="Medium">Medium</label>
-                                </div>
-
-                               <div id="mediumSelection" style="display:none;">
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="mediumSize" placeholder="00">
-                                  </div>                                
-
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="mediumSize" placeholder="00">
-                                  </div> 
-
-                                  <div class="col-md-4">                              
-                                    <select class="form-control my_small_prices">
-                                      <option>200</option>
-                                      <option>300</option>
-                                      <option>400</option>
-                                      <option>500</option>
-                                      <option>600</option>
-                                      <option>700</option>
-                                      <option>800</option>
-                                      <option>900</option>
-                                      <option>1000</option>
-                                      <option>1200</option>
-                                      <option>1400</option>
-                                      <option>1600</option>
-                                      <option>1800</option>
-                                      <option>2000</option>
-                                      <option>2200</option>
-                                      <option>2400</option>
-                                      <option>2600</option>
-                                      <option>2800</option>
-                                      <option>3000</option>
-                                      <option>3500</option>
-                                      <option>4000</option>
-                                      <option>4500</option>
-                                      <option>5000</option>
-                                      <option>5500</option>
-                                      <option>6000</option>
-                                    </select>  
-                                  </div><!-- END PRICE COL CLASS -->
-
-                                </div><!--  end smallSelectin div ID -->
-                              </div><!-- END ROW -->
-                            </div> <!-- End sizeChoice2 div -->
-
-                            <div id="sizeChoice3" class="checkbox">
-                              <div class="row minh_35">
-
-                                <div class="col-md-2">
-                                  <label> <input type="checkbox" value="Large">Large</label>
-                                </div>
-
-                                <div id="largeSelection" style="display:none;">
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="largeSize" placeholder="00">
-                                  </div>                                
-
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="largeSize" placeholder="00">
-                                  </div> 
-
-                                  <div class="col-md-4">                              
-                                    <select class="form-control my_prices">
-                                      <option>200</option>
-                                      <option>300</option>
-                                      <option>400</option>
-                                      <option>500</option>
-                                      <option>600</option>
-                                      <option>700</option>
-                                      <option>800</option>
-                                      <option>900</option>
-                                      <option>1000</option>
-                                      <option>1200</option>
-                                      <option>1400</option>
-                                      <option>1600</option>
-                                      <option>1800</option>
-                                      <option>2000</option>
-                                      <option>2200</option>
-                                      <option>2400</option>
-                                      <option>2600</option>
-                                      <option>2800</option>
-                                      <option>3000</option>
-                                      <option>3500</option>
-                                      <option>4000</option>
-                                      <option>4500</option>
-                                      <option>5000</option>
-                                      <option>5500</option>
-                                      <option>6000</option>
-                                    </select>  
-                                  </div><!-- END PRICE COL CLASS -->
-
-                                </div><!--  end smallSelectin div ID -->
-                              </div><!-- END ROW -->
-                            </div> <!-- End sizeChoice3 div -->
-
-                            <div id="sizeChoice4" class="checkbox">
-                              <div class="row minh_35">
-
-                                <div class="col-md-2">
-                                  <label> <input type="checkbox" value="Xlarge">Extra Large</label>
-                                </div>
-
-                                <div id="xlargeSelection" style="display:none;">
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="xlargeSize" placeholder="00">
-                                  </div>                                
-
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="xlargeSize" placeholder="00">
-                                  </div> 
-
-                                  <div class="col-md-4">                              
-                                    <select class="form-control my_price">
-                                      <option>200</option>
-                                      <option>300</option>
-                                      <option>400</option>
-                                      <option>500</option>
-                                      <option>600</option>
-                                      <option>700</option>
-                                      <option>800</option>
-                                      <option>900</option>
-                                      <option>1000</option>
-                                      <option>1200</option>
-                                      <option>1400</option>
-                                      <option>1600</option>
-                                      <option>1800</option>
-                                      <option>2000</option>
-                                      <option>2200</option>
-                                      <option>2400</option>
-                                      <option>2600</option>
-                                      <option>2800</option>
-                                      <option>3000</option>
-                                      <option>3500</option>
-                                      <option>4000</option>
-                                      <option>4500</option>
-                                      <option>5000</option>
-                                      <option>5500</option>
-                                      <option>6000</option>
-                                    </select>  
-                                  </div><!-- END PRICE COL CLASS -->
-
-                                </div><!--  end xLargeSelection div ID -->
-                              </div><!-- END ROW -->
-                            </div> <!-- End sizeChoice4 div -->
-
-                          </div><!-- END FORM GROUP SIZE CHOICES -->  
-                      </div>    
-
-
-
-
-                        <div class="col-md-4 pad30">
-                          <div class="form-group">
-                            <h4>ITEM TITLE</h4>
-                            <textarea class="form-control" id="itemDescription" type="text" placeholder="Give this item a descriptive title"></textarea>
-                          </div>
-                          <div class="form-group"> 
-                            <h4>ITEM TAGS</h4>                             
-                            <input type="tags" class="form-control" id="itemTags" placeholder="Seperate each with a comma">
-                          </div>
-
-                          <h4>Category</h4>
-                          <div class="form-group ASM_widgets">  
-                            <select class="form-control">
-                              <option>Other</option>
-                              <option>Press</option>
-                              <option>Event</option>
-                              <option>etc</option>
-                            </select>
-                          </div>
-                        
-                        </div> 
-
-
-                       <div class="col-md-4 pad30">
-
-                        <div> <label><input type="checkbox" name="weHavePeople" value="Peoples"> This item has people</label> </div>
-                          <div id="people_choices_container" style="display:none;">
-                            <h5>How many people?</h5>
-                            <select class="form-control">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                              <option>More than 5</option>
-                            </select>
-
-                            <div class="row">
-                              <div class="col-md-6">
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Male </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Female </label> </div>                          
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Looking at Camera </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Away from Camera </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Infant </label> </div>
-                              </div>
-                              <div class="col-md-6">  
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Child </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Teen </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Young Adult </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Middle Aged </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Old Person </label> </div>
-                              </div>  
+                            <h4>Category</h4>
+                            <div class="form-group ASM_widgets">  
+                              <select class="form-control">
+                                <option>Other</option>
+                                <option>Press</option>
+                                <option>Event</option>
+                                <option>etc</option>
+                              </select>
                             </div>
 
-                          <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox">The Model(s) signed a model Release Form</label> </div>
+                            <h4>Sub category</h4>
+                            <div class="form-group ASM_widgets">  
+                              <select class="form-control">
+                                <option>Other</option>
+                                <option>Press</option>
+                                <option>Event</option>
+                                <option>etc</option>
+                              </select>
+                            </div>
+            </td>
+
+            <td class="section2">
                           
-                          </div>
-                          <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox">I own this work</label> </div>  
-                          <div id="PeopleChoices" value="termsConditions" class="checkbox"> <label> <input type="checkbox">I agree to the <a href="#nogo">Terms of Service</a></label> </div>  
-                          <div class="form-group">
-                            <button type="submit" id="item_submission" class="btn" style="clear:both;">Submit Item</button>
-                          </div>  
-                        </div>
+                            <h4>Product Files</h4>
+                            <div class="form-group">    
+                              <h4>Regular Size</h4>
+                              <label for="exampleInputFile">Upload Image</label>
+                              <input type="file" id="exampleInputFile">
 
-                        
-
-                    </div>   <!-- END ROW -->     
-                  </form>
-                
-              </div>  <!-- END upload_section --> 
-
-            </div>
-            <div id="pane2" class="tab-pane">
-
- 
-              <div id="user_signup_section">    
-
-                  <form role="form">
-                    <div class="row">
-                        <div class="col-md-4 pad30">
-                          <h4>Product Files</h4>
-                          <div class="form-group">    
-                            <label for="exampleInputFile">Upload Zip File</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">Zip up your products before you upload</p>
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputFile">Upload Previw Image</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">Format - PNG or JPG only</p>
-                          </div>
-
-                          <h4>PRODUCT DETAILS</h4>
-                          <div class="form-group">
-                            <div id="sizeChoice_title" class="checkbox">
-                              <div class="row">
-                                <div class="col-md-2">SIZE</div>
-                                <div class="col-md-3">LENGTH<span>(PX)</span></div>
-                                <div class="col-md-3">WIDTH<span>(PX)</span></div>
-                                <div class="col-md-4">PRICE</div>
+                               <h4>SuperSize</h4>
+                              <div class="checkbox">
+                                <label> <input type="checkbox">Yes</label> </div> 
+                                <label for="exampleInputFile">Upload Image</label>
+                                <input type="file" id="exampleInputFile">                                        
                               </div>
-                            </div>
-
-                            <div id="sizeChoice1" class="checkbox">
-                              <div class="row minh_35">
-
-                                <div class="col-md-2">
-                                  <label> <input type="checkbox" value="Small">Small</label>
+                              
+                            <div class="form-group">
+                              <div id="sizeChoice_title" class="checkbox">
+                                <div class="row">
+                                  <div class="form-group"> 
+                                    <h4>PICTURE RESOLUTION (DPI)</h4>                             
+                                    <input type="dpi" class="form-control shorter_field" id="dpi" placeholder="">
+                                  </div>
                                 </div>
-
-                                <div id="smallSelection" style="display:none;">
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="smallSize" placeholder="00">
-                                  </div>                                
-
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="smallSize" placeholder="00">
-                                  </div> 
-
-                                  <div class="col-md-4">                              
-                                    <select class="form-control my_small_prices">
-                                      <option>200</option>
-                                      <option>300</option>
-                                      <option>400</option>
-                                      <option>500</option>
-                                      <option>600</option>
-                                      <option>700</option>
-                                      <option>800</option>
-                                      <option>900</option>
-                                      <option>1000</option>
-                                      <option>1200</option>
-                                      <option>1400</option>
-                                      <option>1600</option>
-                                      <option>1800</option>
-                                      <option>2000</option>
-                                      <option>2200</option>
-                                      <option>2400</option>
-                                      <option>2600</option>
-                                      <option>2800</option>
-                                      <option>3000</option>
-                                      <option>3500</option>
-                                      <option>4000</option>
-                                      <option>4500</option>
-                                      <option>5000</option>
-                                      <option>5500</option>
-                                      <option>6000</option>
-                                    </select>  
-                                  </div><!-- END PRICE COL CLASS -->
-
-                                </div><!--  end smallSelection div ID -->
-                              </div><!-- END ROW -->
-                            </div> <!-- End sizeChoice1 div -->
-
-                            <div id="sizeChoice2" class="checkbox">
-                              <div class="row minh_35">
-
-                                <div class="col-md-2">
-                                  <label> <input type="checkbox" value="Medium">Medium</label>
-                                </div>
-
-                               <div id="mediumSelection" style="display:none;">
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="mediumSize" placeholder="00">
-                                  </div>                                
-
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="mediumSize" placeholder="00">
-                                  </div> 
-
-                                  <div class="col-md-4">                              
-                                    <select class="form-control my_small_prices">
-                                      <option>200</option>
-                                      <option>300</option>
-                                      <option>400</option>
-                                      <option>500</option>
-                                      <option>600</option>
-                                      <option>700</option>
-                                      <option>800</option>
-                                      <option>900</option>
-                                      <option>1000</option>
-                                      <option>1200</option>
-                                      <option>1400</option>
-                                      <option>1600</option>
-                                      <option>1800</option>
-                                      <option>2000</option>
-                                      <option>2200</option>
-                                      <option>2400</option>
-                                      <option>2600</option>
-                                      <option>2800</option>
-                                      <option>3000</option>
-                                      <option>3500</option>
-                                      <option>4000</option>
-                                      <option>4500</option>
-                                      <option>5000</option>
-                                      <option>5500</option>
-                                      <option>6000</option>
-                                    </select>  
-                                  </div><!-- END PRICE COL CLASS -->
-
-                                </div><!--  end smallSelectin div ID -->
-                              </div><!-- END ROW -->
-                            </div> <!-- End sizeChoice2 div -->
-
-                            <div id="sizeChoice3" class="checkbox">
-                              <div class="row minh_35">
-
-                                <div class="col-md-2">
-                                  <label> <input type="checkbox" value="Large">Large</label>
-                                </div>
-
-                                <div id="largeSelection" style="display:none;">
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="largeSize" placeholder="00">
-                                  </div>                                
-
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="largeSize" placeholder="00">
-                                  </div> 
-
-                                  <div class="col-md-4">                              
-                                    <select class="form-control my_prices">
-                                      <option>200</option>
-                                      <option>300</option>
-                                      <option>400</option>
-                                      <option>500</option>
-                                      <option>600</option>
-                                      <option>700</option>
-                                      <option>800</option>
-                                      <option>900</option>
-                                      <option>1000</option>
-                                      <option>1200</option>
-                                      <option>1400</option>
-                                      <option>1600</option>
-                                      <option>1800</option>
-                                      <option>2000</option>
-                                      <option>2200</option>
-                                      <option>2400</option>
-                                      <option>2600</option>
-                                      <option>2800</option>
-                                      <option>3000</option>
-                                      <option>3500</option>
-                                      <option>4000</option>
-                                      <option>4500</option>
-                                      <option>5000</option>
-                                      <option>5500</option>
-                                      <option>6000</option>
-                                    </select>  
-                                  </div><!-- END PRICE COL CLASS -->
-
-                                </div><!--  end smallSelectin div ID -->
-                              </div><!-- END ROW -->
-                            </div> <!-- End sizeChoice3 div -->
-
-                            <div id="sizeChoice4" class="checkbox">
-                              <div class="row minh_35">
-
-                                <div class="col-md-2">
-                                  <label> <input type="checkbox" value="Xlarge">Extra Large</label>
-                                </div>
-
-                                <div id="xlargeSelection" style="display:none;">
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="xlargeSize" placeholder="00">
-                                  </div>                                
-
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="xlargeSize" placeholder="00">
-                                  </div> 
-
-                                  <div class="col-md-4">                              
-                                    <select class="form-control my_price">
-                                      <option>200</option>
-                                      <option>300</option>
-                                      <option>400</option>
-                                      <option>500</option>
-                                      <option>600</option>
-                                      <option>700</option>
-                                      <option>800</option>
-                                      <option>900</option>
-                                      <option>1000</option>
-                                      <option>1200</option>
-                                      <option>1400</option>
-                                      <option>1600</option>
-                                      <option>1800</option>
-                                      <option>2000</option>
-                                      <option>2200</option>
-                                      <option>2400</option>
-                                      <option>2600</option>
-                                      <option>2800</option>
-                                      <option>3000</option>
-                                      <option>3500</option>
-                                      <option>4000</option>
-                                      <option>4500</option>
-                                      <option>5000</option>
-                                      <option>5500</option>
-                                      <option>6000</option>
-                                    </select>  
-                                  </div><!-- END PRICE COL CLASS -->
-
-                                </div><!--  end xLargeSelection div ID -->
-                              </div><!-- END ROW -->
-                            </div> <!-- End sizeChoice4 div -->
-
-                          </div><!-- END FORM GROUP SIZE CHOICES -->  
-                      </div>    
-
-
-
-
-                        <div class="col-md-4 pad30">
-                          <div class="form-group">
-                            <h4>ITEM TITLE</h4>
-                            <textarea class="form-control" id="itemDescription" type="text" placeholder="Give this item a descriptive title"></textarea>
-                          </div>
-                          <div class="form-group"> 
-                            <h4>ITEM TAGS</h4>                             
-                            <input type="tags" class="form-control" id="itemTags" placeholder="Seperate each with a comma">
-                          </div>
-
-                          <h4>Category</h4>
-                          <div class="form-group ASM_widgets">  
-                            <select class="form-control">
-                              <option>Other</option>
-                              <option>Press</option>
-                              <option>Event</option>
-                              <option>etc</option>
-                            </select>
-                          </div>
-                        
-                        </div> 
-
-
-                       <div class="col-md-4 pad30">
-
-                        <div> <label><input type="checkbox" name="weHavePeople" value="PeoplesVector"> This item has people</label> </div>
-                          <div id="peoplesVector_choices_container" style="display:none;">
-                            <h5>How many people?</h5>
-                            <select class="form-control">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                              <option>More than 5</option>
-                            </select>
-
-                            <div class="row">
-                              <div class="col-md-6">
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Male </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Female </label> </div>                          
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Looking at Camera </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Away from Camera </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Infant </label> </div>
                               </div>
-                              <div class="col-md-6">  
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Child </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Teen </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Young Adult </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Middle Aged </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Old Person </label> </div>
-                              </div>  
-                            </div>
-                          
-                          <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox">The Model(s) signed a model Release Form</label> </div>
-                          </div>
+                            </div><!-- END FORM GROUP SIZE CHOICES -->  
+                         
+            </td>
 
-                          <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox">I own this work</label> </div>  
-                          <div id="PeopleChoices" value="termsConditions" class="checkbox"> <label> <input type="checkbox">I agree to the <a href="#nogo">Terms of Service</a></label> </div>  
-                          <div class="form-group">
-                            <button type="submit" id="item_submission" class="btn" style="clear:both;">Submit Item</button>
-                          </div>  
-                        </div>
+            <td class="section3">
 
-                        
+                <div class="peopleA">
+                  <h4>Are there people in this photo?</h4>
+                  <div class="checkbox">
+                    <label> <input type="checkbox">Yes</label> </div>
+                  <h5 class="smaller_h5">How Many?</h5>
+                  <div class="form-group ASM_widgets">  
+                    <select class="form-control">
+                      <option>-</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>More</option>
+                    </select>
+                  </div>                
 
-                    </div>   <!-- END ROW -->     
-                  </form>
+                  <div class="checkbox"> <label> <input type="checkbox">Male</label> </div>
+                  <div class="checkbox"> <label> <input type="checkbox">Female</label> </div>    
+                  <div class="checkbox"> <label> <input type="checkbox">Infant</label> </div>    
+                  <div class="checkbox"> <label> <input type="checkbox">Child</label> </div>    
+                  <div class="checkbox"> <label> <input type="checkbox">Teen</label> </div>    
+                  <div class="checkbox"> <label> <input type="checkbox">Young Adult</label> </div>    
+                  <div class="checkbox"> <label> <input type="checkbox">Middle Aged</label> </div>    
+                  <div class="checkbox"> <label> <input type="checkbox">Old Person</label> </div>  
+                </div>
+              
+            </td>
 
-              </div>  <!-- END upload_section --> 
-            </div>
+            <td class="section4">
+                <h4>Do you own this work?</h4>
+                  <ul class="listless">
+                    <li><input type="radio" name="sex" value="male" checked> Yes</li>
+                    <li><input type="radio" name="sex" value="female"> No</li>
+                  </ul>  
 
-            <div id="pane2" class="tab-pane">
-              <div id="user_signup_section">
+                <h4>Did the model(s) sign a model-release form?</h4>
+                  <ul class="listless">
+                    <li><input type="radio" name="sex" value="male" checked> Yes</li>
+                    <li><input type="radio" name="sex" value="female"> No</li>
+                  </ul>  
 
+                <h4>Do you agree to our <a href="#nogo" target="_blank">Terms of Service?</a></h4>
+                  <ul class="listless">
+                    <li><input type="radio" name="sex" value="male" checked> Yes</li>
+                    <li><input type="radio" name="sex" value="female"> No</li>
+                  </ul>  
+            </td>
 
-                  <form role="form">
-                    <div class="row">
-                        <div class="col-md-4 pad30">
-                          <h4>Product Files</h4>
-                          <div class="form-group">    
-                            <label for="exampleInputFile">Upload Zip File</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">Zip up your products before you upload</p>
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputFile">Upload Previw Image</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">Format - PNG or JPG only</p>
-                          </div>
-
-                          <h4>PRODUCT DETAILS PSD</h4>
-                          File Size<br/>
-                          File Resolution<br/>
-                          Items Included<br/>
-                          Items not included<br/>
-
-                          <div class="form-group">
-                            <div id="sizeChoice_title" class="checkbox">
-                              <div class="row">
-                                <div class="col-md-2">SIZE</div>
-                                <div class="col-md-3">LENGTH<span>(PX)</span></div>
-                                <div class="col-md-3">WIDTH<span>(PX)</span></div>
-                                <div class="col-md-4">PRICE</div>
-                              </div>
-                            </div>
-
-                            <div id="sizeChoice1" class="checkbox">
-                              <div class="row minh_35">
-
-                                <div class="col-md-2">
-                                  <label> <input type="checkbox" value="Small">Small</label>
-                                </div>
-
-                                <div id="smallSelection" style="display:none;">
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="smallSize" placeholder="00">
-                                  </div>                                
-
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="smallSize" placeholder="00">
-                                  </div> 
-
-                                  <div class="col-md-4">                              
-                                    <select class="form-control my_small_prices">
-                                      <option>200</option>
-                                      <option>300</option>
-                                      <option>400</option>
-                                      <option>500</option>
-                                      <option>600</option>
-                                      <option>700</option>
-                                      <option>800</option>
-                                      <option>900</option>
-                                      <option>1000</option>
-                                      <option>1200</option>
-                                      <option>1400</option>
-                                      <option>1600</option>
-                                      <option>1800</option>
-                                      <option>2000</option>
-                                      <option>2200</option>
-                                      <option>2400</option>
-                                      <option>2600</option>
-                                      <option>2800</option>
-                                      <option>3000</option>
-                                      <option>3500</option>
-                                      <option>4000</option>
-                                      <option>4500</option>
-                                      <option>5000</option>
-                                      <option>5500</option>
-                                      <option>6000</option>
-                                    </select>  
-                                  </div><!-- END PRICE COL CLASS -->
-
-                                </div><!--  end smallSelection div ID -->
-                              </div><!-- END ROW -->
-                            </div> <!-- End sizeChoice1 div -->
-
-                            <div id="sizeChoice2" class="checkbox">
-                              <div class="row minh_35">
-
-                                <div class="col-md-2">
-                                  <label> <input type="checkbox" value="Medium">Medium</label>
-                                </div>
-
-                               <div id="mediumSelection" style="display:none;">
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="mediumSize" placeholder="00">
-                                  </div>                                
-
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="mediumSize" placeholder="00">
-                                  </div> 
-
-                                  <div class="col-md-4">                              
-                                    <select class="form-control my_small_prices">
-                                      <option>200</option>
-                                      <option>300</option>
-                                      <option>400</option>
-                                      <option>500</option>
-                                      <option>600</option>
-                                      <option>700</option>
-                                      <option>800</option>
-                                      <option>900</option>
-                                      <option>1000</option>
-                                      <option>1200</option>
-                                      <option>1400</option>
-                                      <option>1600</option>
-                                      <option>1800</option>
-                                      <option>2000</option>
-                                      <option>2200</option>
-                                      <option>2400</option>
-                                      <option>2600</option>
-                                      <option>2800</option>
-                                      <option>3000</option>
-                                      <option>3500</option>
-                                      <option>4000</option>
-                                      <option>4500</option>
-                                      <option>5000</option>
-                                      <option>5500</option>
-                                      <option>6000</option>
-                                    </select>  
-                                  </div><!-- END PRICE COL CLASS -->
-
-                                </div><!--  end smallSelectin div ID -->
-                              </div><!-- END ROW -->
-                            </div> <!-- End sizeChoice2 div -->
-
-                            <div id="sizeChoice3" class="checkbox">
-                              <div class="row minh_35">
-
-                                <div class="col-md-2">
-                                  <label> <input type="checkbox" value="Large">Large</label>
-                                </div>
-
-                                <div id="largeSelection" style="display:none;">
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="largeSize" placeholder="00">
-                                  </div>                                
-
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="largeSize" placeholder="00">
-                                  </div> 
-
-                                  <div class="col-md-4">                              
-                                    <select class="form-control my_prices">
-                                      <option>200</option>
-                                      <option>300</option>
-                                      <option>400</option>
-                                      <option>500</option>
-                                      <option>600</option>
-                                      <option>700</option>
-                                      <option>800</option>
-                                      <option>900</option>
-                                      <option>1000</option>
-                                      <option>1200</option>
-                                      <option>1400</option>
-                                      <option>1600</option>
-                                      <option>1800</option>
-                                      <option>2000</option>
-                                      <option>2200</option>
-                                      <option>2400</option>
-                                      <option>2600</option>
-                                      <option>2800</option>
-                                      <option>3000</option>
-                                      <option>3500</option>
-                                      <option>4000</option>
-                                      <option>4500</option>
-                                      <option>5000</option>
-                                      <option>5500</option>
-                                      <option>6000</option>
-                                    </select>  
-                                  </div><!-- END PRICE COL CLASS -->
-
-                                </div><!--  end smallSelectin div ID -->
-                              </div><!-- END ROW -->
-                            </div> <!-- End sizeChoice3 div -->
-
-                            <div id="sizeChoice4" class="checkbox">
-                              <div class="row minh_35">
-
-                                <div class="col-md-2">
-                                  <label> <input type="checkbox" value="Xlarge">Extra Large</label>
-                                </div>
-
-                                <div id="xlargeSelection" style="display:none;">
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="xlargeSize" placeholder="00">
-                                  </div>                                
-
-                                  <div class="col-md-3">
-                                    <input type="text" class="form-control" id="xlargeSize" placeholder="00">
-                                  </div> 
-
-                                  <div class="col-md-4">                              
-                                    <select class="form-control my_price">
-                                      <option>200</option>
-                                      <option>300</option>
-                                      <option>400</option>
-                                      <option>500</option>
-                                      <option>600</option>
-                                      <option>700</option>
-                                      <option>800</option>
-                                      <option>900</option>
-                                      <option>1000</option>
-                                      <option>1200</option>
-                                      <option>1400</option>
-                                      <option>1600</option>
-                                      <option>1800</option>
-                                      <option>2000</option>
-                                      <option>2200</option>
-                                      <option>2400</option>
-                                      <option>2600</option>
-                                      <option>2800</option>
-                                      <option>3000</option>
-                                      <option>3500</option>
-                                      <option>4000</option>
-                                      <option>4500</option>
-                                      <option>5000</option>
-                                      <option>5500</option>
-                                      <option>6000</option>
-                                    </select>  
-                                  </div><!-- END PRICE COL CLASS -->
-
-                                </div><!--  end xLargeSelection div ID -->
-                              </div><!-- END ROW -->
-                            </div> <!-- End sizeChoice4 div -->
-
-                          </div><!-- END FORM GROUP SIZE CHOICES -->  
-                      </div>    
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-12 upload_new">
+      <button type="submit" class="btn btn-default buttonA">Upload Item</button>   
+   </div>
+</div>
 
 
 
-
-                        <div class="col-md-4 pad30">
-                          <div class="form-group">
-                            <h4>ITEM TITLE</h4>
-                            <textarea class="form-control" id="itemDescription" type="text" placeholder="Give this item a descriptive title"></textarea>
-                          </div>
-                          <div class="form-group"> 
-                            <h4>ITEM TAGS</h4>                             
-                            <input type="tags" class="form-control" id="itemTags" placeholder="Seperate each with a comma">
-                          </div>
-
-                          <h4>Category</h4>
-                          <div class="form-group ASM_widgets">  
-                            <select class="form-control">
-                              <option>Other</option>
-                              <option>Press</option>
-                              <option>Event</option>
-                              <option>etc</option>
-                            </select>
-                          </div>
-                        
-                        </div> 
-
-
-                       <div class="col-md-4 pad30">
-
-                        <div> <label><input type="checkbox" name="weHavePeople" value="PeoplesPSD"> This item has people</label> </div>
-                          <div id="peoplePSD_choices_container" style="display:none;">
-                            <h5>How many people?</h5>
-                            <select class="form-control">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                              <option>More than 5</option>
-                            </select>
-
-                            <div class="row">
-                              <div class="col-md-6">
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Male </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Female </label> </div>                          
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Looking at Camera </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Away from Camera </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Infant </label> </div>
-                              </div>
-                              <div class="col-md-6">  
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Child </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Teen </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Young Adult </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Middle Aged </label> </div>
-                                <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox"> Old Person </label> </div>
-                              </div>  
-                            </div>
-                          <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox">The Model(s) signed a model Release Form</label> </div>
-                          </div>
-
-                          <div id="PeopleChoices" class="checkbox"> <label> <input type="checkbox">I own this work</label> </div>  
-                          <div id="PeopleChoices" value="termsConditions" class="checkbox"> <label> <input type="checkbox">I agree to the <a href="#nogo">Terms of Service</a></label> </div>  
-                          <div class="form-group">
-                            <button type="submit" id="item_submission" class="btn" style="clear:both;">Submit Item</button>
-                          </div>  
-                        </div>
-
-                        
-
-                    </div>   <!-- END ROW -->     
-                  </form>
-
-
-              </div>  <!-- END upload_section --> 
-
-            </div>
-
-          </div><!-- /.tab-content -->
-        </div><!-- /.tabbable -->
-
-      </div> <!-- jumbotron_2 -->
-      
 
     </div> <!-- /container -->
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('input[type="checkbox"]').click(function(){
-                if($(this).attr("value")=="Peoples"){
-                    $("#people_choices_container").slideToggle();
-                }
-
-                if($(this).attr("value")=="PeoplesVector"){
-                    $("#peoplesVector_choices_container").slideToggle();
-                }
-
-
-                if($(this).attr("value")=="PeoplesPSD"){
-                    $("#peoplesPSD_choices_container").slideToggle();
-                }
-
-                if($(this).attr("value")=="Small"){
-                    $("#smallSelection").slideToggle();
-                }         
-                if($(this).attr("value")=="Medium"){
-                    $("#mediumSelection").slideToggle();
-                }  
-                if($(this).attr("value")=="Large"){
-                    $("#largeSelection").slideToggle();
-                }  
-                if($(this).attr("value")=="Xlarge"){
-                    $("#xlargeSelection").slideToggle();
-                }                                                     
-            });
-        });
-    </script>
 
 
     <!-- Bootstrap core JavaScript
@@ -990,7 +159,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="{{base_url}}{{media_url}}js/bootstrap.min.js"></script>
+
+    <script src="{{base_url}}{{media_url}}assets/js/bootstrap.min.js"></script>
 </body>
 
 <style>

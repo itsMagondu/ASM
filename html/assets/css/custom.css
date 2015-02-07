@@ -11,12 +11,16 @@ transition: all 0.3s ease-in-out;
 
 
 a { color: #CA42A4 }
-a:hover { color: #000000; }
+a:hover, a:active { color: #000000; }
 h3, .h3 {
 font-weight: 700;
 color: #000;
 font-size: 1.4em;
 }
+.information h3 {
+color: #FFF;
+}
+
 h4 {
 color: #000;
 font-weight: 600;
@@ -37,13 +41,13 @@ padding: 20px 10px !important;
 thead {
 text-transform: uppercase;
 }
-td.table_item_tags a {
+td.table_item_tags a, .item_tags a {
 background: rgba(234, 52, 149, 0.2);
 padding: 3px 8px;
 margin-bottom: 16px;
 line-height: 27px;
 }
-td.table_item_tags a:hover {
+td.table_item_tags a:hover,  .item_tags a:hover {
 background: rgba(234, 52, 149, 0.4);
 }
 /*
@@ -471,6 +475,32 @@ padding: 10px 20px;
 background: #803965;
 color: #FFF;
 }
+.buttonB {
+background: #EA3495;
+border: 0px;
+border-radius: 0px;
+color: #FFF;
+padding: 10px 20px;
+}
+.buttonB:active, .buttonB:hover {
+background: #FF0088;
+color: #FFF;
+}
+
+.inlinelist li {
+display: inline-block;
+}
+ul.social_share li {
+margin-right: 10px;
+}
+ul.social_share {
+margin: 15px 0px 10px;
+font-size: .9em;
+font-weight: 600;
+}
+
+
+
 
 .filter_button_1 {
 margin-right: 0px;
@@ -492,4 +522,160 @@ color: #FFF;
 
 
 
+/* VIEW ITEM */
+ul.blocklist li button {
+width: 100%;
+height: auto;
+max-width: 110px;
+text-align: left;
+margin-bottom: 5px;
+}
+.breaker {
+margin-top: 90px;
+}
+.image_preview_thumb img, .image_preview img {
+width: 100%;
+height: auto;
+}
+.title_C1 {
+margin: 10px 14px;
+}
+.similar_thumbs, .tag_column {
+margin-top: 40px;
+}
+.image_preview_thumb img {
+width: 100%;
+height: auto;
+}
+.preview_details_list {
+font-size: .9em;
+}
+.preview_details_list li p {
+margin-bottom: 3px;
+}
+.preview_details_list li {
+margin-bottom: 17px;
+}
+
+
+.category_listing_A li ul {
+padding: 0px 0px 0px 10px;
+}
+.category_listing_A li ul li {
+list-style: none;
+}
+.category_listing_A li ul li.dropdown-header {
+padding: 0px;
+font-weight: bold;
+margin: 20px 0px 10px;
+}
+.image_preview_thumb {
+padding-right: 4px;
+}
+.preview_details_list h3 {
+margin-top: 0px;
+line-height: 1.3em;
+}
+.image_sizes label {
+display: inline-block;
+margin-bottom: 5px;
+font-weight: 400;
+}
+.image_sizes label.display_name {
+font-weight: 700;
+}
+span.pipe_separator {
+color: #CCC;
+margin: 0px 12px;
+}
+
+
+
+/* ERROR MESSAGES */
+.error-notice {
+  margin: 15px 0px; /* Making sure to keep some distance from all side */
+}
+
+.oaerror {
+width: 100%;
+margin: 0 auto;
+background-color: #FFFFFF;
+padding: 10px;
+border: 0px solid #eee;
+border-left-width: 2px;
+border-radius: 0px;
+margin: 0 auto;
+font-family: 'Open Sans', sans-serif;
+font-size: 13px;
+}
+
+.danger {
+  border-left-color: #d9534f; /* Left side border color */
+  background-color: rgba(217, 83, 79, 0.1); /* Same color as the left border with reduced alpha to 0.1 */
+}
+
+.danger strong {
+  color:  #d9534f;
+}
+
+.warning {
+  border-left-color: #f0ad4e;
+  background-color: rgba(240, 173, 78, 0.1);
+}
+
+.warning strong {
+  color: #f0ad4e;
+}
+
+.info {
+  border-left-color: #5bc0de;
+  background-color: rgba(91, 192, 222, 0.1);
+}
+
+.info strong {
+  color: #5bc0de;
+}
+
+.success {
+  border-left-color: #2b542c;
+  background-color: rgba(43, 84, 44, 0.1);
+}
+
+.success strong {
+  color: #2b542c;
+}
+
+
+
+
+/* UPLOAD */
+.table-sortable tbody tr {
+    cursor: move;
+}
+.btn-danger {
+color: #fff;
+background-color: #d9534f;
+border-color: #d43f3a;
+}
+.upload_item_container {
+background: rgb(255, 255, 255);
+padding: 30px;
+}
+.upload_table th, .upload_table td {
+text-align: left !important;
+}
+td.section1 {
+width: 35%;
+}
+.shorter_field {
+max-width: 170px;
+}
+.upload_new_item {
+padding: 10px;
+margin-bottom: 20px;
+}
+.upload_new_item .buttonA {
+width: 100%;
+padding: 20px;
+}
 

@@ -14,5 +14,16 @@ def home(request):
     args['form_errors'] = False
     args['email_error'] = False
     args['error_message'] = ""
+    return render_to_response("home.html", args)
+    
+
+@csrf_exempt
+def login(request):
+    args = {}
+    args['base_url'] = settings.BASE_URL
+    args['media_url'] = settings.MEDIA_URL
+    args['form_errors'] = False
+    args['email_error'] = False
+    args['error_message'] = ""
     return render_to_response("index.html", args)
     
