@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 import datetime
 
 class UserProfile(models.Model):
-    '''Extended user details.'''
-    user = models.ForeignKey(User, unique = True)
+    '''Extended user details. Figure out how to do this.'''
+    user = models.OneToOneField(User)
         
     occupation = models.TextField(null = True)
     isBuyer = models.BooleanField(default = False)
@@ -14,4 +14,4 @@ class UserProfile(models.Model):
     country = models.TextField(null = True)
     
     def __unicode__(self):
-        return self.user
+        return self.user.username
