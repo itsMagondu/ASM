@@ -14,6 +14,11 @@ def home(request):
     args['form_errors'] = False
     args['email_error'] = False
     args['error_message'] = ""
+    args['isLoggedIn'] = False
+    
+    if request.user.is_authenticated():
+        args['isLoggedIn'] = True
+
     return render_to_response("home.html", args)
     
 

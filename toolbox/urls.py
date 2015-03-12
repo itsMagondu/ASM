@@ -32,7 +32,7 @@ urlpatterns = patterns('',
 
     # for django's built in user authentication system The Authentication form dislays the contact page form                  
     (r'^accounts/login/$', 'django.contrib.auth.views.login',
-    {'template_name': 'index.html','authentication_form':AuthenticationForm }),
+    {'template_name': 'login.html','authentication_form':AuthenticationForm }),
     (r'^accounts/logout/$', 'django.contrib.auth.views.logout_then_login',
     {'authentication_form':AuthenticationForm }),
 

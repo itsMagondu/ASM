@@ -120,34 +120,25 @@
 
 
           </ul>
-          <ul class="nav navbar-nav navbar-right">
+	  
+	  
+	  {% if isLoggedIn %}
+	  <ul class="nav navbar-nav navbar-right">
             <!--<li><a href="../navbar-static-top/"><span class="glyphicon glyphicon-log-out"></span> Register</a></li>-->
             <li class="dropdown">
+	      
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Welcome {{ username }} <b class="caret"></b></a>
+	    </li> 
+	  </ul>
 
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Sign In <b class="caret"></b></a>
-              
-	      <div class="dropdown-menu login_dropdown">
-              
-              
-                          <form class="form-signin" role="form">
-                    <input type="email" class="form-control" placeholder="Email address" required="" autofocus="" autocomplete="off" keyev="true" clickev="true" style="padding-right: 0px; background-attachment: scroll; cursor: auto; margin-bottom: 5px; background-position: 100% 50%; background-repeat: no-repeat no-repeat;">
-                    <input type="password" class="form-control" placeholder="Password" required="" autocomplete="off" keyev="true" clickev="true" style="
-                    padding-right: 0px; background-attachment: scroll; cursor: auto; background-position: 100% 50%; background-repeat: no-repeat no-repeat;">
-                    <label class="checkbox">
-                      <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                    <button class="btn btn-md btn-tertiary btn-block" type="submit">Sign in</button>
+	  {% else %}
 
-                    <div id="reset_password" class="link_centered">
-                      <a class="reset_password" href="#nogo">Forgot Password</a>
-                    </div>
-
-                  </form>
-                  
-              </div>  
-
+          <ul class="nav navbar-nav navbar-right">
+            <!--<li><a href="../navbar-static-top/"><span class="glyphicon glyphicon-log-out"></span> Register</a></li>-->
+            <li> <a href="{{base_url}}accounts/login"><span class="glyphicon glyphicon-user"></span> Login </a>
             </li>
           </ul>
+	  {% endif %}
         </div><!--/.nav-collapse -->
       </div>
     </div>
