@@ -6,9 +6,23 @@ from django.http import *
 
 from photo.models import *
 
-# Create your views here.
+import logging
+
+#Logging initilization
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+handler = logging.FileHandler('/tmp/photo.log')
+handler.setLevel(logging.INFO)
+
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+
+logger.addHandler(handler)
+logger.info('Great. We are now in business')
+
 #@login_required
-def Add(request):
+def add(request):
     args = {}
     args['base_url'] = settings.BASE_URL
     args['media_url'] = settings.MEDIA_URL
@@ -17,7 +31,7 @@ def Add(request):
     
     return render_to_response("upload.html", args)
 
-def Admin(request):
+def admin(request):
     args = {}
     args['base_url'] = settings.BASE_URL
     args['media_url'] = settings.MEDIA_URL
@@ -29,39 +43,53 @@ def upload(request):
     if not (request.method == "POST"):
         return HttpResponseServerError("No POST data sent.")
     
+    print request.FILES
+
     title = request.POST.get('title',None)
     tags = request.POST.get('tags',None)
     category = request.POST.get('category',None)
     subcategory = request.POST.get('subcategory',None)
-    regular = request.POST.get('regular',None)
-    supersize = request.POST.get('supersize',None)
+    supersize = request.FILES['supersize']
+    regular = request.FILES['regular']
+#    regular = request.POST.get('regular',None)
+#    supersize = request.POST.get('supersize',None)
     dpi = request.POST.get('dpi',None)
     number = request.POST.get('people_number',None)
-    attribute = request.POST.get('people_type',None)
-
-    print category
-    print request.user.id
-    print dir(request.user)
+    attribute = request.POST.get('people_type_group',None)
     
-    p = Photo(
-        title = title,
-        regularImage = regular,
-        supersizeImage = supersize,
-        dpi = dpi,
-        uploaded_by = request.user.userprofile,
-        people_in_picture = 1,
-        people_attribute = attribute,
-        category_id = 1,
-        subcategory_id = 1,
-        active=True,
-        approved = False,
-        approved_by = request.user.userprofile,
-        )
+    args = {}
+    args['base_url'] = settings.BASE_URL
+    args['media_url'] = settings.MEDIA_URL
 
-    p.save()
-    #Redirect to ip page with watermared image
-    return HttpResponse("Success")
     
+    try:
+        p = Photo(
+            title = title,
+            regularImage = regular,
+            supersizeImage = supersize,
+            dpi = dpi,
+            uploaded_by = request.user.userprofile,
+            people_in_picture = number,
+            people_attribute = attribute,
+            category_id = category,
+            subcategory_id = subcategory,
+            active=True,
+            approved = False,
+            approved_by = request.user.userprofile,
+            )
+        
+        p.save()
+        #Redirect to view page with watermaked image
+        logger.info('Successfully added image with ID: '+str(p.id))
+        args['image'] = p
+        args['success'] = "Image uploaded successfully"
+        return render_to_response("view-post.html", args)
+        #return HttpResponse("Success")
+    except Exception, e:
+        #Log the error and send it via email
+        logger.error('Failed to create image',exc_info=True)
+        args['error'] = "An error occured. Please contact the admin"
+        return render_to_response("upload.html", args)
 
 def profile(request):
     args = {}
@@ -69,3 +97,10 @@ def profile(request):
     args['media_url'] = settings.MEDIA_URL
     return render_to_response("sellerProfile.html", args)
 
+def view(request):
+    args = {}
+    args['base_url'] = settings.BASE_URL
+    args['media_url'] = settings.MEDIA_URL
+    args['image'] = Photo.objects.all().order_by('-id')[0]
+    args['success'] = "Image uploaded successfully"
+    return render_to_response("view-post.html", args)
