@@ -1,3 +1,4 @@
+
 from django.contrib.auth.forms import AuthenticationForm
 from django.conf.urls import patterns, include, url
 from django.contrib.sitemaps.views import sitemap
@@ -31,13 +32,11 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # for django's built in user authentication system The Authentication form dislays the contact page form                  
-    (r'^accounts/login/$', 'django.contrib.auth.views.login',
-    {'template_name': 'index.html','authentication_form':AuthenticationForm }),
-    (r'^accounts/logout/$', 'django.contrib.auth.views.logout_then_login',
-    {'authentication_form':AuthenticationForm }),
+    (r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html' }),
+    (r'^accounts/logout/$', 'django.contrib.auth.views.logout_then_login'),
 
     # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^toolbox/', include(admin.site.urls)),
                        
 #    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
                   

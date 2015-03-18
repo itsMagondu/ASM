@@ -4,7 +4,8 @@
 
 <div class="breaker"></div>
 <div class="container upload_item_container">
-  <form method="post" action="{{base_url}}photo/upload/">
+  <form method="post" action="{{base_url}}photo/upload/" enctype="multipart/form-data">
+    {% csrf_token %}
     <div class="row clearfix">
       <div class="col-md-12 table-responsive">
 	
@@ -41,18 +42,18 @@
 		
                 <h4>Category</h4>
                 <div class="form-group ASM_widgets">  
-                  <select class="form-control" name="category" name="id">
+                  <select class="form-control" name="category" id="category">
 		    {% for c in categories %}
-                    <option>{{c.name}}</option>
+                    <option  id="{{c.id}}" name="{{c.id}}" value="{{c.id}}">{{c.name}}</option>
 		    {% endfor %}
                   </select>
                 </div>
 		
                 <h4>Sub category</h4>
-                <div class="form-group ASM_widgets" id="subcategory" name="subcategory">  
-                  <select class="form-control">
+                <div class="form-group ASM_widgets" id="subcategorydiv" name="subcategorydiv">  
+                  <select class="form-control" name="subcategory" id="subcategory">
 		    {% for s in subcategories %}
-                    <option>{{s.name}}</option>
+                    <option id="{{s.id}}" name="{{s.id}}" value="{{s.id}}">{{s.name}}</option>
 		    {% endfor %}
                   </select>
                 </div>
@@ -64,13 +65,16 @@
                 <div class="form-group">    
                   <h4>Regular Size</h4>
                   <label for="exampleInputFile">Upload Image</label>
-                  <input type="file" id="regular" name="regular">
+                  <input type="file" id="regular" name="regular" value="regular">
+                </div>
 		  
-                  <h4>SuperSize</h4>
-                  <div class="checkbox">
-                    <label> <input type="checkbox">Yes</label> </div> 
+                <h4>SuperSize</h4>
+                <div class="checkbox">
+                  <label> <input type="checkbox">Yes</label> 
+		</div> 
+                <div class="form-group">    
                   <label for="exampleInputFile">Upload Image</label>
-                  <input type="file" id="supersize" name="supersize">                                        
+                  <input type="file" id="supersize" name="supersize" value="supersize">                                        
                 </div>
                 
                 <div class="form-group">
@@ -93,15 +97,15 @@
                   <div class="checkbox">
                     <label> <input type="checkbox">Yes</label> </div>
                   <h5 class="smaller_h5">How Many?</h5>
-                  <div name="people_number" class="form-group ASM_widgets">  
-                    <select class="form-control">
+                  <div name="people_number_div" class="form-group ASM_widgets">  
+                    <select class="form-control" name="people_number">
                       <option>-</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>More</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="more">More</option>
                     </select>
                   </div>                
 		  
