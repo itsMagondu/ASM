@@ -104,3 +104,9 @@ def view(request):
     args['image'] = Photo.objects.all().order_by('-id')[0]
     args['success'] = "Image uploaded successfully"
     return render_to_response("view-post.html", args)
+
+def search(request):
+    args = {}
+    args['base_url'] = settings.BASE_URL
+    args['media_url'] = settings.MEDIA_URL
+    return render_to_response("categoryV2.html", args)

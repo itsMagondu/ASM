@@ -1,117 +1,50 @@
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/img/favicon.ico">
+{% extends "upload_header.html" %}
+{% block title %}ASM | Photos {% endblock %}
+{% block content %}
 
-    <title>African Stock Photography, Illustrations and Templates &mdash; African Stock Media</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/custom-media-queries.css" rel="stylesheet">
-    <link href="assets/css/custom.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-<body style="">
-
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="assets/img/logo.png" alt="African Stock Media.com"></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Default</a></li>
-            <li><a href="../navbar-static-top/">Static top</a></li>
-            <li class="active"><a href="./">Fixed top</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    
+    <div class="jumbotron_3">
+      <div id="search_bar" class="large_search_bar">
+        <ul class="search_bar"> 
+	  
+          <li>
+            <div class="input-group input-group-lg">
+              <input type="text" class="form-control" id="inputSearch1" placeholder="Enter Keywords..">
+            </div>
+          </li>
+          
+          <li>
+            <div class="input-group input-group-lg">
+              <select class="form-control">
+                <option>Any Type</option>
+                <option>Photograph</option>
+                <option>Vector Illustration</option>
+                <option>Photoshop Template</option>
+              </select>
+            </div>  
+          </li>
+	  
+          <li>
+            <div class="input-group input-group-lg">
+              <select class="form-control">
+                <option>Any Category</option>
+                <option>Press</option>
+                <option>Easter</option>
+                <option>Kenya@50</option>
+              </select>
+            </div>
+          </li>
+          
+          <li><a class="btn btn-primary btn-lg search_button" role="button">Search <span class="glyphicon glyphicon-search"></span></a></li>
+	  	  
+	  
+        </ul> 
+      </div>  
     </div>
-        
-      </div>
-    </div>
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-
-        <div class="jumbotron_3">
-          <div id="search_bar" class="large_search_bar">
-            <ul class="search_bar"> 
-
-              <li>
-                <div class="input-group input-group-lg">
-                  <input type="text" class="form-control" id="inputSearch1" placeholder="Enter Keywords..">
-                </div>
-              </li>
-                
-              <li>
-              <div class="input-group input-group-lg">
-                <select class="form-control">
-                  <option>Any Type</option>
-                  <option>Photograph</option>
-                  <option>Vector Illustration</option>
-                  <option>Photoshop Template</option>
-                </select>
-              </div>  
-              </li>
-
-              <li>
-                <div class="input-group input-group-lg">
-                  <select class="form-control">
-                    <option>Any Category</option>
-                    <option>Press</option>
-                    <option>Easter</option>
-                    <option>Kenya@50</option>
-                  </select>
-                </div>
-              </li>
-                
-              <li><a class="btn btn-primary btn-lg search_button" role="button">Search <span class="glyphicon glyphicon-search"></span></a></li>
-
-
-
-            </ul> 
-          </div>  
-        </div>
-
+    
       </div><!-- END CONTAINER -->
     </div>
 
@@ -207,7 +140,7 @@
   <div id="grid_container" class="masonry" style="">
     
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/250/food/6" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample5.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -215,7 +148,7 @@
     </div>
 
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/150/food/10" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample1.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -223,7 +156,7 @@
     </div>
 
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/250/food/1" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample2.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -231,7 +164,7 @@
     </div>
 
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/250/food/2" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample3.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -239,7 +172,7 @@
     </div>
 
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/250/food/3" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}img/assets/sample4.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -247,7 +180,7 @@
     </div>
 
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/250/food/4" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample5.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -255,7 +188,7 @@
     </div>
 
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/250/food/5" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample6.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -263,7 +196,7 @@
     </div>
 
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/250/food/7" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample7.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -271,7 +204,7 @@
     </div>
 
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/250/food/8" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample8.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -279,7 +212,7 @@
     </div>
 
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/250/food/9" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample9.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -287,7 +220,7 @@
     </div>
     
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/250/food/10" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample1.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -295,7 +228,7 @@
     </div>
     
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/250/food/2" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample2.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -303,7 +236,7 @@
     </div>
     
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/250/food/5" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample3.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -311,7 +244,7 @@
     </div>
     
     <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="http://lorempixum.com/200/250/food/7" title="My Image Description 01"/></div></a>
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample5.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
           <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
@@ -352,9 +285,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.masonry.min.js"></script>
-    <script src="assets/js/imagesloaded.min.js"></script>
+    <script src="{{base_url}}{{media_url}}assets/js/bootstrap.min.js"></script>
+    <script src="{{base_url}}{{media_url}}assets/js/jquery.masonry.min.js"></script>
+    <script src="{{base_url}}{{media_url}}assets/js/imagesloaded.min.js"></script>
 
    <script>
      $(function(){
@@ -373,3 +306,5 @@
 
 
 </body>
+
+{% endblock %}

@@ -679,3 +679,15 @@ width: 100%;
 padding: 20px;
 }
 
+/*Added by Magondu*/
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+img-responsive {
+ display: block;
+ height: auto;
+ max-width: 100%;
+}

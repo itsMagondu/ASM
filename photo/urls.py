@@ -6,4 +6,5 @@ urlpatterns = patterns('',
     url(r'^upload/', 'photo.views.upload'),
     url(r'^profile/', 'photo.views.profile'),
     url(r'^view/', 'photo.views.view'),
+    url(r'^search/', 'photo.views.search'),
 )
