@@ -25,7 +25,12 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '52.1.4.157',
+    '.52.1.4.157',
+    '.52.1.4.157.',
+]
 
 ADMINS = (
     ('Samuel Magondu', 'MagonduNjenga@gmail.com'), 
@@ -47,8 +52,8 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'siteAdmin',
     'photo',
-    'photologue',
-    'sortedm2m',
+    #'photologue',
+    #'sortedm2m',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -72,12 +77,13 @@ SITE_ID = 1
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.                                            
-        'NAME': 'asm',                      # Or path to database file if using sqlite3.                                                              
-        'USER': 'root',                      # Not used with sqlite3.                                                                                 
-        'PASSWORD': 'root',                  # Not used with sqlite3.                                                                              
-        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.                                         
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.                                                    
+        #Set this as env variables to avoid hardcoding
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.                               
+        'NAME': 'asm',                      # Or path to database file if using sqlite3.                                                      
+        'USER': 'root',                      # Not used with sqlite3.                                   
+        'PASSWORD': 'laFKavm6WVji',                  # Not used with sqlite3.                                                              
+        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.                                 
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.                                            
     }
 }
 
@@ -140,6 +146,3 @@ LOGGING = {
 }
 
 
-#Photologue settings
-PHOTOLOGUE_GALLERY_PAGINATE_BY = 20
-PHOTOLOGUE_PHOTO_PAGINATE_BY = 20
