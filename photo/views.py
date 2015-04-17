@@ -109,4 +109,5 @@ def search(request):
     args = {}
     args['base_url'] = settings.BASE_URL
     args['media_url'] = settings.MEDIA_URL
+    args['photos'] = Photo.objects.all().order_by('-id')
     return render_to_response("categoryV2.html", args)

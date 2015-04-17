@@ -8,6 +8,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
+def get_env_variable(var_name):
+    """ Get the environment variable or return exception """
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        error_msg = 'Set the %s environment variable' % var_name
+        raise ImproperlyConfigured(error_msg)
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -77,11 +86,11 @@ DATABASES = {
     'default': {
         #Set this as env variables to avoid hardcoding
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.                               
-        'NAME': 'asm',                      # Or path to database file if using sqlite3.                                                      
-        'USER': 'root',                      # Not used with sqlite3.                                   
-        'PASSWORD': 'laFKavm6WVji',                  # Not used with sqlite3.                                                              
-        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.                                 
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.                                            
+        'NAME': get_env_variable('DB_NAME'),
+        'USER': get_env_variable('DB_USER'),
+        'PASSWORD': get_env_variable('DB_PASSWORD'),
+        'HOST': get_env_variable('DB_HOST'),
+        'PORT': get_env_variable('DB_PORT')
     }
 }
 

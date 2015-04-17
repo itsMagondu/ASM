@@ -124,45 +124,49 @@
 
         </div>
         <div class="col-md-10">
+	  
+          <div class="grid_search_results"> 
+	    
+            <h4> Search Results for: <span>Kenya at 50</span> </h4>
+            <div id="pagination">               
+              <div class="btn-group">
+                <button type="button" class="btn btn-default">1</button>
+                <button type="button" class="btn btn-default">2</button>
+                <button type="button" class="btn btn-default">3</button>
+                <button type="button" class="btn btn-default">4</button>
+              </div>                        
+            </div>
+	    
+	    <div id="grid_container" class="masonry" style="">
+	      
+	      {% for photo in photos %}
+	      
+	      <div class="masonryImage masonry-brick" style="">
+		<a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{photo.regularImage.url}}" title="{{photo.title}}"/></div></a>
+		<div class="folio_grid_links folio_links">
+		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> {{photo.price}} </a>
+		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+		</div>
+	      </div>
 
-        <div class="grid_search_results"> 
+	      {% endfor %}
 
-          <h4> Search Results for: <span>Kenya at 50</span> </h4>
-          <div id="pagination">               
-                <div class="btn-group">
-                  <button type="button" class="btn btn-default">1</button>
-                  <button type="button" class="btn btn-default">2</button>
-                  <button type="button" class="btn btn-default">3</button>
-                  <button type="button" class="btn btn-default">4</button>
-                </div>                        
-          </div>
-
-  <div id="grid_container" class="masonry" style="">
-    
-    <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample5.jpg" title="My Image Description 01"/></div></a>
-        <div class="folio_grid_links folio_links">
-          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
-          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
-        </div>
-    </div>
-
-    <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample1.jpg" title="My Image Description 01"/></div></a>
-        <div class="folio_grid_links folio_links">
-          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
-          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
-        </div>
-    </div>
-
-    <div class="masonryImage masonry-brick" style="">
-        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample2.jpg" title="My Image Description 01"/></div></a>
-        <div class="folio_grid_links folio_links">
-          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
-          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
-        </div>
-    </div>
-
+	      <div class="masonryImage masonry-brick" style="">
+		<a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample1.jpg" title="My Image Description 01"/></div></a>
+		<div class="folio_grid_links folio_links">
+		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+		</div>
+	      </div>
+	      
+	      <div class="masonryImage masonry-brick" style="">
+		<a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample2.jpg" title="My Image Description 01"/></div></a>
+		<div class="folio_grid_links folio_links">
+		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+		</div>
+	      </div>
+	      
     <div class="masonryImage masonry-brick" style="">
         <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample3.jpg" title="My Image Description 01"/></div></a>
         <div class="folio_grid_links folio_links">
