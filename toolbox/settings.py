@@ -52,8 +52,6 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'siteAdmin',
     'photo',
-    #'photologue',
-    #'sortedm2m',
 )
 
 MIDDLEWARE_CLASSES = (
