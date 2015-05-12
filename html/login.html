@@ -69,21 +69,28 @@
     <div class="jumbotron home_masthead">
       <div class="container">
         <div class="table">
-          <form class="form" role="form">
-            <input type="text" class="form-control" placeholder="Username" required="" autofocus="" autocomplete="off" keyev="true" clickev="true" style="padding-right: 0px; background-attachment: scroll; cursor: auto; margin-bottom: 5px; background-position: 100% 50%; background-repeat: no-repeat no-repeat;">
-            <input type="password" class="form-control" placeholder="Password" required="" autocomplete="off" keyev="true" clickev="true" style="
-																		 padding-right: 0px; background-attachment: scroll; cursor: auto; background-position: 100% 50%; background-repeat: no-repeat no-repeat;">
+	  <form action="{% url 'django.contrib.auth.views.login' %}" method="post" accept-charset="UTF-8">
+            {% csrf_token %}
+	    
+	    {% if form.errors %}
+            <p class="bg-danger" style="padding:5px;">
+              <a class="hide" href="#">hide this</a>Username and password did not match. Please try again.
+            </p>
+            {% endif %}	   
+
+	    <input type="text" class="form-control" placeholder="Username" id="username" name="username" required="" autofocus="" autocomplete="off" keyev="true" clickev="true" style="padding-right: 0px; background-attachment: scroll; cursor: auto; margin-bottom: 5px; background-position: 100% 50%; background-repeat: no-repeat no-repeat;">
+            <input type="password" class="form-control" placeholder="Password" id="password" name="password" required="" autocomplete="off" keyev="true" clickev="true" style="																		 padding-right: 0px; background-attachment: scroll; cursor: auto; background-position: 100% 50%; background-repeat: no-repeat no-repeat;">
             <label class="checkbox">
               <input type="checkbox" value="remember-me"> Remember me
             </label>
             <button class="btn btn-md btn-tertiary btn-block" type="submit">Sign in</button>
-	    
+	    	    
+          </form>
+	  <div>
             <div id="reset_password" class="link_centered">
               <a class="reset_password" href="#nogo">Forgot Password</a>
             </div>
-	    
-          </form>
-
+	  </div>
 	</div>
 	</div> <!-- /container -->
 	<div class="footer_container">
