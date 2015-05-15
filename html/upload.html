@@ -42,7 +42,7 @@
 		
                 <h4>Category</h4>
                 <div class="form-group ASM_widgets">  
-                  <select class="form-control" name="category" id="category">
+                  <select class="form-control" name="category" id="category"  onchange="change_option(document.getElementById('category').value)">
 		    {% for c in categories %}
                     <option  id="{{c.id}}" name="{{c.id}}" value="{{c.id}}">{{c.name}}</option>
 		    {% endfor %}
@@ -180,4 +180,25 @@
   
 </style>
 
+<script>
+  function change_option(id) 
+  {
+  url = '{{ base_url }}photo/subcateg?id='+id
+  
+  $.ajax({
+  type: "get",
+  url:url,
+  async: false,
+  success: function(data){
+  str = ''
+  data = data.data
+  for ( var i = 0; i < data.length; i++ ) 
+		       {
+                       str += '<option id="'+data[i].id+'" name="'+data[i].id+'" value="'+data[i].id+'">'+data[i].name+'</option>';
+		       }
+
+		       $('#subcategory').html(str)
+                       }});}
+
+</script>
 {% endblock %}

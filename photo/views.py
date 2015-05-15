@@ -7,6 +7,7 @@ from django.http import *
 from photo.models import *
 
 import logging
+import json
 
 #Logging initilization
 logging.basicConfig(level=logging.INFO)
@@ -111,3 +112,14 @@ def search(request):
     args['media_url'] = settings.MEDIA_URL
     args['photos'] = Photo.objects.all().order_by('-id')
     return render_to_response("categoryV2.html", args)
+
+def subcategories(request):
+    
+    if request.method == "GET":
+        
+        category = request.GET.get("id",None)
+        
+        s = SubCategory.objects.filter(category_id=category).values("id","name")
+        return HttpResponse(json.dumps(dict(data=list(s))), content_type="application/json")
+    else:
+        return HttpResponse("Not found")

@@ -7,4 +7,5 @@ urlpatterns = patterns('',
     url(r'^profile/', 'photo.views.profile'),
     url(r'^view/', 'photo.views.view'),
     url(r'^search/', 'photo.views.search'),
+    url(r'^subcateg/', 'photo.views.subcategories'),
 )
