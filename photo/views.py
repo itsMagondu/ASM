@@ -22,38 +22,45 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 logger.info('Great. We are now in business')
 
-#@login_required
+@login_required
 def add(request):
     args = {}
     args['base_url'] = settings.BASE_URL
     args['media_url'] = settings.MEDIA_URL
     args['categories']=Category.objects.all()
     args['subcategories']=SubCategory.objects.all()
-    
+    args['isLoggedIn'] = False
+    args['username']=request.user.username
+
+    if request.user.is_authenticated():
+        args['isLoggedIn'] = True
+
+
     return render_to_response("upload.html", args)
 
+@login_required
 def admin(request):
     args = {}
     args['base_url'] = settings.BASE_URL
     args['media_url'] = settings.MEDIA_URL
+    args['isLoggedIn'] = False
+    args['username']=request.user.username
+    if request.user.is_authenticated():
+        args['isLoggedIn'] = True
+
     return render_to_response("admin.html", args)
 
-@csrf_exempt
 @login_required
 def upload(request):
     if not (request.method == "POST"):
         return HttpResponseServerError("No POST data sent.")
     
-    print request.FILES
-
     title = request.POST.get('title',None)
     tags = request.POST.get('tags',None)
     category = request.POST.get('category',None)
     subcategory = request.POST.get('subcategory',None)
     supersize = request.FILES['supersize']
     regular = request.FILES['regular']
-#    regular = request.POST.get('regular',None)
-#    supersize = request.POST.get('supersize',None)
     dpi = request.POST.get('dpi',None)
     number = request.POST.get('people_number',None)
     attribute = request.POST.get('people_type_group',None)
@@ -61,7 +68,10 @@ def upload(request):
     args = {}
     args['base_url'] = settings.BASE_URL
     args['media_url'] = settings.MEDIA_URL
-
+    args['isLoggedIn'] = False
+    args['username']=request.user.username
+    if request.user.is_authenticated():
+        args['isLoggedIn'] = True
     
     try:
         p = Photo(
@@ -92,26 +102,46 @@ def upload(request):
         args['error'] = "An error occured. Please contact the admin"
         return render_to_response("upload.html", args)
 
+@login_required
 def profile(request):
     args = {}
     args['base_url'] = settings.BASE_URL
     args['media_url'] = settings.MEDIA_URL
+    args['isLoggedIn'] = False
+    args['username']=request.user.username
+    args['user'] = request.user
+    if request.user.is_authenticated():
+        args['isLoggedIn'] = True
+    args["photos"] = Photo.objects.filter(uploaded_by=request.user)
     return render_to_response("sellerProfile.html", args)
 
+@login_required
 def view(request):
     args = {}
     args['base_url'] = settings.BASE_URL
     args['media_url'] = settings.MEDIA_URL
-    args['image'] = Photo.objects.all().order_by('-id')[0]
+    args['image'] = Photo.objects.filter(uploaded_by=request.user).order_by('-id')[0]
     args['success'] = "Image uploaded successfully"
+    args['isLoggedIn'] = False
+    args['username']=request.user.username
+    if request.user.is_authenticated():
+        args['isLoggedIn'] = True
+
     return render_to_response("view-post.html", args)
 
+@login_required
 def search(request):
     args = {}
     args['base_url'] = settings.BASE_URL
     args['media_url'] = settings.MEDIA_URL
     args['photos'] = Photo.objects.all().order_by('-id')
-    return render_to_response("categoryV2.html", args)
+    args['isLoggedIn'] = False
+    args['username']=request.user.username
+    if request.user.is_authenticated():
+        args['isLoggedIn'] = True
+
+
+    return render_to_response("search.html", args)
 
 def subcategories(request):
     
