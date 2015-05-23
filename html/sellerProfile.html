@@ -1,98 +1,6 @@
 {% extends "header.html" %}
-{% block title %}ASM | Upload {% endblock %}
+{% block title %}ASM | Profile {% endblock %}
 {% block content %}
-<body style="">
-
-
-
-
-
-    <!--  HEADER SECTION BEGINS HERE -->
-    <!--  ========================== -->
-    <!--  ========================== -->
-    <!--  ========================== -->
-    <!--  ========================== -->
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="{{base_url}}{{media_url}}assets/img/logo.png" alt="African Stock Media.com"></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Default</a></li>
-            <li><a href="../navbar-static-top/">Static top</a></li>
-            <li class="active"><a href="./">Fixed top</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-        
-      </div>
-    </div>
-    <!--  HEADER SECTION ENDS HERE   -->
-    <!--  ========================== -->
-    <!--  ========================== -->
-    <!--  ========================== -->
-    <!--  ========================== -->
-
-
-
-
-<<<<<<< HEAD
-      <div class="row profile_header_A">
-          <div class="col-md-6 profile_header_A1">
-            <div class="row clearfix profile_header_A_in">
-              <div class="col-md-3 profile_header_A_in clearfix">
-                  <figure class="prof_pic">
-                    <img src="{{base_url}}{{media_url}}assets/img/profpic.jpg" alt="Name Surname">
-                  </figure>                
-              </div>
-              <div class="col-md-9 profile_header_A_in_2 clearfix">
-                <section class="prof_info_A">
-                    <h3>Name Surname</h3>
-                    <h5>Country   <span>|</span>    Photographer</h5>
-                    <h5>Bio</h5>
-                    <div class="profile_description">
-                      <p>
-                        In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
-                      </p>
-                    </div>  
-                </section>
-              </div>
-            </div>      
-          </div>
-=======
->>>>>>> 1c24afbb0c36915e8072d404e3c973735626eeee
-
-
-
-
-
-
 
     <!--  MAIN PAGE CONTAINER BEGINS HERE SECTION ENDS HERE   -->
     <!--  ========================== -->
@@ -110,7 +18,7 @@
               <div class="row clearfix profile_header_A_in">
                 <div class="col-md-3 profile_header_A_in clearfix">
                     <figure class="prof_pic">
-                      <img src="assets/img/profpic.jpg" alt="Name Surname">
+                      <img src="{{base_url}}{{media_url}}assets/img/profpic.jpg" alt="Name Surname">
                     </figure>                
                 </div>
                 <div class="col-md-9 profile_header_A_in_2 clearfix">
@@ -138,12 +46,12 @@
               </ul>
             </div>
             <div class="col-md-3 profile_header_A3">
-                <div data-placement="top" data-toggle="tooltip" title="Edit" class="profile_button">
-                  <button class="btn btn-default btn-sm" data-title="Edit" data-toggle="modal" data-target="#edit" >
-                    <span class="glyphicon glyphicon-pencil"></span> Edit Profile
-                  </button>
-                </div>
-
+              <div data-placement="top" data-toggle="tooltip" title="Edit" class="profile_button">
+                <button class="btn btn-default btn-sm" data-title="Edit" data-toggle="modal" data-target="#edit" >
+                  <span class="glyphicon glyphicon-pencil"></span> Edit Profile
+                </button>
+              </div>
+	      
             </div>
         </div>
 
@@ -233,145 +141,146 @@
                                   <tbody>
                       
                                     <tr>
-                                        <td><input type="checkbox" class="checkthis" /></td>
-                                        <td class="preview_img_table">
-                                          <img src="assets/img/sample6.jpg">
-                                        </td>
-                                        <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
-                                        <td class="table_item_price">6 Credits (KSh 2,800)</td>
-                                        <td class="table_item_date">01/ 01/ 2015</td>
-                                        <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
-                                        <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
+                      <td><input type="checkbox" class="checkthis" /></td>
+                      <td class="preview_img_table">
+                        <img src="{{base_url}}{{media_url}}assets/img/sample6.jpg">
+                      </td>
+                      <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
+                      <td class="table_item_price">6 Credits (KSh 2,800)</td>
+                      <td class="table_item_date">01/ 01/ 2015</td>
+                      <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
+                      <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
 
-                                        <td class="table_action_buttons">
-                                            <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
-                                              <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
-                                            </button>
-                                            <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
-                                              <a href="view-post.html"><span class="glyphicon glyphicon-eye-open"></span></a>
-                                              </button>
-                                          <p data-placement="top" data-toggle="tooltip" title="Preview">
-                                            <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
-                                              <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
-                                            </button>
-                                          </p>      
-                                        </td>
-                                    </tr>
-                      
+                      <td class="table_action_buttons">
+                          <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
+                            <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
+                          </button>
+                          <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
+                            <a href="view.html"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            </button>
+                        <p data-placement="top" data-toggle="tooltip" title="Preview">
+                          <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
+                            <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
+                          </button>
+                        </p>      
+                      </td>
+                  </tr>
+    
 
-                                    <tr>
-                                        <td><input type="checkbox" class="checkthis" /></td>
-                                        <td class="preview_img_table">
-                                          <img src="assets/img/sample6.jpg">
-                                        </td>
-                                        <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
-                                        <td class="table_item_price">6 Credits (KSh 2,800)</td>
-                                        <td class="table_item_date">01/ 01/ 2015</td>
-                                        <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
-                                        <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
+                  <tr>
+                      <td><input type="checkbox" class="checkthis" /></td>
+                      <td class="preview_img_table">
+                        <img src="{{base_url}}{{media_url}}assets/img/sample6.jpg">
+                      </td>
+                      <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
+                      <td class="table_item_price">6 Credits (KSh 2,800)</td>
+                      <td class="table_item_date">01/ 01/ 2015</td>
+                      <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
+                      <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
 
-                                        <td class="table_action_buttons">
-                                            <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
-                                              <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
-                                            </button>
-                                            <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
-                                              <a href="view-post.html"><span class="glyphicon glyphicon-eye-open"></span></a>
-                                              </button>
-                                          <p data-placement="top" data-toggle="tooltip" title="Preview">
-                                            <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
-                                              <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
-                                            </button>
-                                          </p>      
-                                        </td>
-                                    </tr>
-
-
-                                    <tr>
-                                        <td><input type="checkbox" class="checkthis" /></td>
-                                        <td class="preview_img_table">
-                                          <img src="assets/img/sample6.jpg">
-                                        </td>
-                                        <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
-                                        <td class="table_item_price">6 Credits (KSh 2,800)</td>
-                                        <td class="table_item_date">01/ 01/ 2015</td>
-                                        <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
-                                        <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
-
-                                        <td class="table_action_buttons">
-                                            <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
-                                              <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
-                                            </button>
-                                            <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
-                                              <a href="view-post.html"><span class="glyphicon glyphicon-eye-open"></span></a>
-                                              </button>
-                                          <p data-placement="top" data-toggle="tooltip" title="Preview">
-                                            <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
-                                              <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
-                                            </button>
-                                          </p>      
-                                        </td>
-                                    </tr>
+                      <td class="table_action_buttons">
+                          <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
+                            <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
+                          </button>
+                          <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
+                            <a href="view.html"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            </button>
+                        <p data-placement="top" data-toggle="tooltip" title="Preview">
+                          <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
+                            <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
+                          </button>
+                        </p>      
+                      </td>
+                  </tr>
 
 
-                                    <tr>
-                                        <td><input type="checkbox" class="checkthis" /></td>
-                                        <td class="preview_img_table">
-                                          <img src="assets/img/sample6.jpg">
-                                        </td>
-                                        <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
-                                        <td class="table_item_price">6 Credits (KSh 2,800)</td>
-                                        <td class="table_item_date">01/ 01/ 2015</td>
-                                        <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
-                                        <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
+                  <tr>
+                      <td><input type="checkbox" class="checkthis" /></td>
+                      <td class="preview_img_table">
+                        <img src="{{base_url}}{{media_url}}assets/img/sample6.jpg">
+                      </td>
+                      <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
+                      <td class="table_item_price">6 Credits (KSh 2,800)</td>
+                      <td class="table_item_date">01/ 01/ 2015</td>
+                      <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
+                      <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
 
-                                        <td class="table_action_buttons">
-                                            <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
-                                              <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
-                                            </button>
-                                            <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
-                                              <a href="view-post.html"><span class="glyphicon glyphicon-eye-open"></span></a>
-                                              </button>
-                                          <p data-placement="top" data-toggle="tooltip" title="Preview">
-                                            <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
-                                              <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
-                                            </button>
-                                          </p>      
-                                        </td>
-                                    </tr>                  
+                      <td class="table_action_buttons">
+                          <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
+                            <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
+                          </button>
+                          <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
+                            <a href="view.html"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            </button>
+                        <p data-placement="top" data-toggle="tooltip" title="Preview">
+                          <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
+                            <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
+                          </button>
+                        </p>      
+                      </td>
+                  </tr>
 
 
-                                    <tr>
-                                        <td><input type="checkbox" class="checkthis" /></td>
-                                        <td class="preview_img_table">
-                                          <img src="assets/img/sample6.jpg">
-                                        </td>
-                                        <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
-                                        <td class="table_item_price">6 Credits (KSh 2,800)</td>
-                                        <td class="table_item_date">01/ 01/ 2015</td>
-                                        <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
-                                        <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
+                  <tr>
+                      <td><input type="checkbox" class="checkthis" /></td>
+                      <td class="preview_img_table">
+                        <img src="{{base_url}}{{media_url}}assets/img/sample6.jpg">
+                      </td>
+                      <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
+                      <td class="table_item_price">6 Credits (KSh 2,800)</td>
+                      <td class="table_item_date">01/ 01/ 2015</td>
+                      <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
+                      <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
 
-                                        <td class="table_action_buttons">
-                                            <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
-                                              <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
-                                            </button>
-                                            <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
-                                              <a href="view-post.html"><span class="glyphicon glyphicon-eye-open"></span></a>
-                                              </button>
-                                          <p data-placement="top" data-toggle="tooltip" title="Preview">
-                                            <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
-                                              <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
-                                            </button>
-                                          </p>      
-                                        </td>
-                                    </tr>                  
-                      
-                     
-                      
-                     
-                      
+                      <td class="table_action_buttons">
+                          <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
+                            <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
+                          </button>
+                          <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
+                            <a href="view.html"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            </button>
+                        <p data-placement="top" data-toggle="tooltip" title="Preview">
+                          <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
+                            <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
+                          </button>
+                        </p>      
+                      </td>
+                  </tr>                  
+
+
+                  <tr>
+                      <td><input type="checkbox" class="checkthis" /></td>
+                      <td class="preview_img_table">
+                        <img src="{{base_url}}{{media_url}}assets/img/sample6.jpg">
+                      </td>
+                      <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
+                      <td class="table_item_price">6 Credits (KSh 2,800)</td>
+                      <td class="table_item_date">01/ 01/ 2015</td>
+                      <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
+                      <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
+
+                      <td class="table_action_buttons">
+                          <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
+                            <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
+                          </button>
+                          <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
+                            <a href="view.html"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            </button>
+                        <p data-placement="top" data-toggle="tooltip" title="Preview">
+                          <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
+                            <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
+                          </button>
+                        </p>      
+                      </td>
+		      
+                  </tr>                  
+                  
+                  
+                  
+                  
+                  
                                   </tbody>
-                                      
+                                  
                               </table>
 
                                 <ul class="pagination paginationB">
@@ -395,190 +304,12 @@
                               </div>
                               
                           </div>
-<<<<<<< HEAD
                         </div>
                       </div><!-- /.col-lg-6 -->
-
-                     <div class="col-md-2 filter_button_1B">
-                        <button type="submit" class="btn btn-default buttonA">Apply</button>   
-                     </div>
 
                   </div>    
 
                </div>
-              <table id="mytable" class="table table-bordred table-striped">
-                   
-                <thead>
-                    <th><input type="checkbox" id="checkall" /></th>
-                    <th>Preview</th>
-                    <th>Title</th>
-                    <th>Price</th>
-                    <th>Date</th>
-                    <th>Categories</th>
-                    <th>Tags</th>
-                    <th>Action</th>
-                </thead>
-                <tbody>
-    
-                  <tr>
-                      <td><input type="checkbox" class="checkthis" /></td>
-                      <td class="preview_img_table">
-                        <img src="{{base_url}}{{media_url}}assets/img/sample6.jpg">
-                      </td>
-                      <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
-                      <td class="table_item_price">6 Credits (KSh 2,800)</td>
-                      <td class="table_item_date">01/ 01/ 2015</td>
-                      <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
-                      <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
-
-                      <td class="table_action_buttons">
-                          <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
-                            <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
-                          </button>
-                          <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
-                            <a href="view.html"><span class="glyphicon glyphicon-eye-open"></span></a>
-                            </button>
-                        <p data-placement="top" data-toggle="tooltip" title="Preview">
-                          <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
-                            <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
-                          </button>
-                        </p>      
-                      </td>
-                  </tr>
-    
-
-                  <tr>
-                      <td><input type="checkbox" class="checkthis" /></td>
-                      <td class="preview_img_table">
-                        <img src="{{base_url}}{{media_url}}assets/img/sample6.jpg">
-                      </td>
-                      <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
-                      <td class="table_item_price">6 Credits (KSh 2,800)</td>
-                      <td class="table_item_date">01/ 01/ 2015</td>
-                      <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
-                      <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
-
-                      <td class="table_action_buttons">
-                          <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
-                            <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
-                          </button>
-                          <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
-                            <a href="view.html"><span class="glyphicon glyphicon-eye-open"></span></a>
-                            </button>
-                        <p data-placement="top" data-toggle="tooltip" title="Preview">
-                          <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
-                            <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
-                          </button>
-                        </p>      
-                      </td>
-                  </tr>
-
-
-                  <tr>
-                      <td><input type="checkbox" class="checkthis" /></td>
-                      <td class="preview_img_table">
-                        <img src="{{base_url}}{{media_url}}assets/img/sample6.jpg">
-                      </td>
-                      <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
-                      <td class="table_item_price">6 Credits (KSh 2,800)</td>
-                      <td class="table_item_date">01/ 01/ 2015</td>
-                      <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
-                      <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
-
-                      <td class="table_action_buttons">
-                          <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
-                            <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
-                          </button>
-                          <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
-                            <a href="view.html"><span class="glyphicon glyphicon-eye-open"></span></a>
-                            </button>
-                        <p data-placement="top" data-toggle="tooltip" title="Preview">
-                          <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
-                            <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
-                          </button>
-                        </p>      
-                      </td>
-                  </tr>
-
-
-                  <tr>
-                      <td><input type="checkbox" class="checkthis" /></td>
-                      <td class="preview_img_table">
-                        <img src="{{base_url}}{{media_url}}assets/img/sample6.jpg">
-                      </td>
-                      <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
-                      <td class="table_item_price">6 Credits (KSh 2,800)</td>
-                      <td class="table_item_date">01/ 01/ 2015</td>
-                      <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
-                      <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
-
-                      <td class="table_action_buttons">
-                          <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
-                            <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
-                          </button>
-                          <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
-                            <a href="view.html"><span class="glyphicon glyphicon-eye-open"></span></a>
-                            </button>
-                        <p data-placement="top" data-toggle="tooltip" title="Preview">
-                          <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
-                            <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
-                          </button>
-                        </p>      
-                      </td>
-                  </tr>                  
-
-
-                  <tr>
-                      <td><input type="checkbox" class="checkthis" /></td>
-                      <td class="preview_img_table">
-                        <img src="{{base_url}}{{media_url}}assets/img/sample6.jpg">
-                      </td>
-                      <td class="table_item_title">This is my lorem ipsum photo title, let's see how a long title might look</td>
-                      <td class="table_item_price">6 Credits (KSh 2,800)</td>
-                      <td class="table_item_date">01/ 01/ 2015</td>
-                      <td class="table_item_cat"><a href="#nogo">People</a>, <a href="#nogo">Editorial</a>, </td>
-                      <td class="table_item_tags"><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a></td>
-
-                      <td class="table_action_buttons">
-                          <button class="btn btn-default btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
-                            <a href="upload.html"><span class="glyphicon glyphicon-pencil"></span></a>
-                          </button>
-                          <button class="btn btn-default btn-xs" data-title="Preview" data-toggle="modal" data-target="#delete" >
-                            <a href="view.html"><span class="glyphicon glyphicon-eye-open"></span></a>
-                            </button>
-                        <p data-placement="top" data-toggle="tooltip" title="Preview">
-                          <button class="btn btn-default btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
-                            <a href="#nogo"><span class="glyphicon glyphicon-trash"></span></a>
-                          </button>
-                        </p>      
-                      </td>
-                  </tr>                  
-    
-   
-    
-   
-    
-                </tbody>
-                    
-            </table>
-
-              <ul class="pagination paginationB">
-                <li>
-                  <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">«</span>
-                  </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                  <a href="#" aria-label="Next">
-                    <span aria-hidden="true">»</span>
-                  </a>
-                </li>
-              </ul>
                 
             </div>
             
@@ -645,13 +376,10 @@
                           <option>Illustration</option>
                         </select>   
                         <textarea rows="3" class="form-control dropA" placeholder="Bio"></textarea>
-=======
->>>>>>> 1c24afbb0c36915e8072d404e3c973735626eeee
                       </div>
                     </div>
               
 
-<<<<<<< HEAD
               <div class="modal-footer ">
                 <button type="button" class="btn btn-warning btn-lg buttonA" style="width: 100%;">
                   <span class="glyphicon glyphicon-ok-sign"></span> Save Changes
@@ -689,8 +417,6 @@
   </div>
       <!-- /.modal-dialog --> 
     </div>
-=======
-
 
                 <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
                   <div class="modal-dialog">
@@ -754,25 +480,6 @@
                             </div>
                           </div>
                           
->>>>>>> 1c24afbb0c36915e8072d404e3c973735626eeee
-
-                          <div class="modal-footer ">
-                            <button type="button" class="btn btn-warning btn-lg buttonA" style="width: 100%;">
-                              <span class="glyphicon glyphicon-ok-sign"></span> Save Changes
-                            </button>
-                          </div>
-
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
-
-
 
 
                       </div><!-- /.modal-content --> 
@@ -800,7 +507,6 @@
                   </div>
                     </div>
                 <!-- /.modal-content --> 
->>>>>>> 1c24afbb0c36915e8072d404e3c973735626eeee
             </div>
         <!-- /.modal-dialog --> 
         </div>
@@ -831,11 +537,6 @@
   </div>
 </div>
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 1c24afbb0c36915e8072d404e3c973735626eeee
 <script type="text/javascript">
   $(document).ready(function(){
   $("#mytable #checkall").click(function () {
@@ -870,7 +571,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<<<<<<< HEAD
     <script src="{{base_url}}{{media_url}}assets/js/bootstrap.min.js"></script>
 
    <script>
@@ -890,7 +590,3 @@
 
 </body>
 {% endblock%}
-=======
-    <script src="assets/js/bootstrap.min.js"></script>
-</body>
->>>>>>> 1c24afbb0c36915e8072d404e3c973735626eeee
