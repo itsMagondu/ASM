@@ -23,12 +23,12 @@
                 </div>
                 <div class="col-md-9 profile_header_A_in_2 clearfix">
                   <section class="prof_info_A">
-                      <h3>Name Surname</h3>
-                      <h5>Country   <span>|</span>    Photographer</h5>
+                      <h3>{{user.last_name}} {{user.first_name}}</h3>
+                      <h5>{{user.userprofile.country}}   <span>|</span> {{user.userprofile.occupation}}</h5>
                       <h5>Bio</h5>
                       <div class="profile_description">
                         <p>
-                          In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+			  {{user.userprofile.bio}}
                         </p>
                       </div>  
                   </section>
@@ -38,7 +38,7 @@
 
             <div class="col-md-3 profile_header_A2">
               <h4 class="margin_bottom_kiasi"><b>CATEGORIES</b></h4>
-              <h5><b>All Uploads</b> <span class="label label-info">40</span></h5>
+              <h5><b>All Uploads</b> <span class="label label-info">{{photos.count}}</span></h5>
               <h5>Photography</h5>
               <ul class="profile_header_A2_in ph_A2_in_1 listless">
                 <li><p><a href="#nogo">Government</a> <span class="label label-default">6</span></p></li>
