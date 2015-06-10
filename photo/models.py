@@ -54,7 +54,7 @@ class Photo(models.Model):
     
 class Purchases(models.Model):
     photo = models.ForeignKey(Photo)
-    buyer = models.ForeignKey('siteAdmin.UserProfile')
+    buyer = models.ForeignKey('siteAdmin.UserProfile',related_name="profile")
     date = models.DateTimeField(auto_now_add = True)
     active = models.BooleanField(default = None)
     

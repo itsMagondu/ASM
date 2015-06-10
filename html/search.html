@@ -1,0 +1,307 @@
+{% extends "header.html" %}
+{% block title %}ASM | Search {% endblock %}
+{% block content %}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    
+    <div class="jumbotron_3">
+      <div id="search_bar" class="large_search_bar">
+        <ul class="search_bar"> 
+	  
+          <li>
+            <div class="input-group input-group-lg">
+              <input type="text" class="form-control" id="inputSearch1" placeholder="Enter Keywords..">
+            </div>
+          </li>
+          
+          <li>
+            <div class="input-group input-group-lg">
+              <select class="form-control">
+                <option>Any Type</option>
+                <option>Photograph</option>
+                <option>Vector Illustration</option>
+                <option>Photoshop Template</option>
+              </select>
+            </div>  
+          </li>
+	  
+          <li>
+            <div class="input-group input-group-lg">
+              <select class="form-control">
+                <option>Any Category</option>
+                <option>Press</option>
+                <option>Easter</option>
+                <option>Kenya@50</option>
+              </select>
+            </div>
+          </li>
+          
+          <li><a class="btn btn-primary btn-lg search_button" role="button">Search <span class="glyphicon glyphicon-search"></span></a></li>
+	  	  
+	  
+        </ul> 
+      </div>  
+    </div>
+    
+      </div><!-- END CONTAINER -->
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-2">
+          <h4>Narrow Down Search</h4>
+
+            <div id="narrow_by_credit">
+            <h5>CREDITS</h5>
+              <div class="form-group ASM_widgets">
+                <select class="form-control">
+                  <option>Any</option>
+                  <option>Up to 4 Credits</option>
+                  <option>Up to 8 Credits</option>
+                  <option>Up to 12 Credits</option>
+                  <option>Up to 16 Credits</option>
+                  <option>Up to 20 Credits</option>
+                  <option>More than 20 Credits</option>
+                </select>                
+              </div>
+            </div>
+
+            <div id="narrow_by_size">
+            <h5>SIZE</h5>
+              <div class="form-group ASM_widgets">
+                <select class="form-control">
+                  <option>Any</option>
+                  <option>Small</option>
+                  <option>Medium</option>
+                  <option>Large</option>
+                  <option>X Large</option>
+                </select>                
+              </div>              
+            </div>            
+
+            <div id="narrow_by_license">
+            <h5>LICENSE</h5>
+              <div class="ASM_widgets">
+                <div class="btn-group-vertical ASM_widgets">
+                  <button type="button" class="btn btn-default active">Regular License</button>
+                  <button type="button" class="btn btn-default">Extended License</button>
+                </div>            
+              </div>
+            </div>  
+            
+            <div id="narrow_by_PEOPLE">
+            <h5>PEOPLE</h5>
+              <div class="ASM_widgets">
+                <h5 class="smaller_h5">Number of People</h5>
+                <div class="form-group ASM_widgets">  
+                  <select class="form-control">
+                    <option>-</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>More</option>
+                  </select>
+                </div>                
+
+                <div class="checkbox"> <label> <input type="checkbox">Male</label> </div>
+                <div class="checkbox"> <label> <input type="checkbox">Female</label> </div>    
+                <div class="checkbox"> <label> <input type="checkbox">Infant</label> </div>    
+                <div class="checkbox"> <label> <input type="checkbox">Child</label> </div>    
+                <div class="checkbox"> <label> <input type="checkbox">Teen</label> </div>    
+                <div class="checkbox"> <label> <input type="checkbox">Young Adult</label> </div>    
+                <div class="checkbox"> <label> <input type="checkbox">Middle Aged</label> </div>    
+                <div class="checkbox"> <label> <input type="checkbox">Old Person</label> </div>  
+
+              </div>  
+            </div> 
+            <button type="submit" class="btn btn-primary update_search">Update Search</button>
+            <div id="reset_choices" class="link_centered"> <a class="reset" href="#nogo">Reset</a> </div>
+
+        </div>
+        <div class="col-md-10">
+	  
+          <div class="grid_search_results"> 
+	    
+            <h4> Search Results for: <span>Kenya at 50</span> </h4>
+            <div id="pagination">               
+              <div class="btn-group">
+                <button type="button" class="btn btn-default">1</button>
+                <button type="button" class="btn btn-default">2</button>
+                <button type="button" class="btn btn-default">3</button>
+                <button type="button" class="btn btn-default">4</button>
+              </div>                        
+            </div>
+	    
+	    <div id="grid_container" class="masonry" style="">
+	      
+	      {% for photo in photos %}
+	      
+	      <div class="masonryImage masonry-brick" style="">
+		<a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{photo.regularImage.url}}" title="{{photo.title}}"/></div></a>
+		<div class="folio_grid_links folio_links">
+		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> {{photo.price}} </a>
+		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+		</div>
+	      </div>
+
+	      {% endfor %}
+
+	      <div class="masonryImage masonry-brick" style="">
+		<a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample1.jpg" title="My Image Description 01"/></div></a>
+		<div class="folio_grid_links folio_links">
+		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+		</div>
+	      </div>
+	      
+	      <div class="masonryImage masonry-brick" style="">
+		<a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample2.jpg" title="My Image Description 01"/></div></a>
+		<div class="folio_grid_links folio_links">
+		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+		</div>
+	      </div>
+	      
+    <div class="masonryImage masonry-brick" style="">
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample3.jpg" title="My Image Description 01"/></div></a>
+        <div class="folio_grid_links folio_links">
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+        </div>
+    </div>
+
+    <div class="masonryImage masonry-brick" style="">
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}img/assets/sample4.jpg" title="My Image Description 01"/></div></a>
+        <div class="folio_grid_links folio_links">
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+        </div>
+    </div>
+
+    <div class="masonryImage masonry-brick" style="">
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample5.jpg" title="My Image Description 01"/></div></a>
+        <div class="folio_grid_links folio_links">
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+        </div>
+    </div>
+
+    <div class="masonryImage masonry-brick" style="">
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample6.jpg" title="My Image Description 01"/></div></a>
+        <div class="folio_grid_links folio_links">
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+        </div>
+    </div>
+
+    <div class="masonryImage masonry-brick" style="">
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample7.jpg" title="My Image Description 01"/></div></a>
+        <div class="folio_grid_links folio_links">
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+        </div>
+    </div>
+
+    <div class="masonryImage masonry-brick" style="">
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample8.jpg" title="My Image Description 01"/></div></a>
+        <div class="folio_grid_links folio_links">
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+        </div>
+    </div>
+
+    <div class="masonryImage masonry-brick" style="">
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample9.jpg" title="My Image Description 01"/></div></a>
+        <div class="folio_grid_links folio_links">
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+        </div>
+    </div>
+    
+    <div class="masonryImage masonry-brick" style="">
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample1.jpg" title="My Image Description 01"/></div></a>
+        <div class="folio_grid_links folio_links">
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+        </div>
+    </div>
+    
+    <div class="masonryImage masonry-brick" style="">
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample2.jpg" title="My Image Description 01"/></div></a>
+        <div class="folio_grid_links folio_links">
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+        </div>
+    </div>
+    
+    <div class="masonryImage masonry-brick" style="">
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample3.jpg" title="My Image Description 01"/></div></a>
+        <div class="folio_grid_links folio_links">
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+        </div>
+    </div>
+    
+    <div class="masonryImage masonry-brick" style="">
+        <a href="#nogo"><div class="grid_thumb"><img src="{{base_url}}{{media_url}}assets/img/sample5.jpg" title="My Image Description 01"/></div></a>
+        <div class="folio_grid_links folio_links">
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> Credits - 6 </a>
+          <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
+        </div>
+    </div>
+
+  
+  </div>
+
+      <div id="pagination">               
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">1</button>
+          <button type="button" class="btn btn-default">2</button>
+          <button type="button" class="btn btn-default">3</button>
+          <button type="button" class="btn btn-default">4</button>
+        </div>                        
+  </div>
+
+
+
+
+
+          </div> <!-- END ROW -->
+        </div>
+
+       </div>
+      </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="{{base_url}}{{media_url}}assets/js/bootstrap.min.js"></script>
+    <script src="{{base_url}}{{media_url}}assets/js/jquery.masonry.min.js"></script>
+    <script src="{{base_url}}{{media_url}}assets/js/imagesloaded.min.js"></script>
+
+   <script>
+     $(function(){
+   
+       var $container = $('#grid_container');
+     
+       $container.imagesLoaded( function(){
+         $container.masonry({
+           itemSelector : '.masonryImage'
+         });
+       });
+     
+     });
+   </script>
+ 
+
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,114 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{{base_url}}{{media_url}}assets/img/favicon.ico">
+
+    <title>African Stock Photography, Illustrations and Templates &mdash; African Stock Media</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/media/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/media/assets/css/custom-media-queries.css" rel="stylesheet">
+    <link href="/media/assets/css/custom.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body style="">
+
+
+
+
+    <!--  HEADER SECTION BEGINS HERE -->
+    <!--  ========================== -->
+    <!--  ========================== -->
+    <!--  ========================== -->
+    <!--  ========================== -->
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="/media/assets/img/logo.png" alt="African Stock Media.com"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+	  
+	  
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+        
+      </div>
+    </div>
+    <!--  HEADER SECTION ENDS HERE   -->
+    <!--  ========================== -->
+    <!--  ========================== -->
+    <!--  ========================== -->
+    <!--  ========================== -->
+
+
+
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron home_masthead">
+      <div class="container">
+        <div class="table">
+	  <form action="{% url 'django.contrib.auth.views.login' %}" method="post" accept-charset="UTF-8">
+            {% csrf_token %}
+	    
+	    {% if form.errors %}
+            <p class="bg-danger" style="padding:5px;">
+              <a class="hide" href="#">hide this</a>Username and password did not match. Please try again.
+            </p>
+            {% endif %}	   
+
+	    <input type="text" class="form-control" placeholder="Username" id="username" name="username" required="" autofocus="" autocomplete="off" keyev="true" clickev="true" style="padding-right: 0px; background-attachment: scroll; cursor: auto; margin-bottom: 5px; background-position: 100% 50%; background-repeat: no-repeat no-repeat;">
+            <input type="password" class="form-control" placeholder="Password" id="password" name="password" required="" autocomplete="off" keyev="true" clickev="true" style="																		 padding-right: 0px; background-attachment: scroll; cursor: auto; background-position: 100% 50%; background-repeat: no-repeat no-repeat;">
+            <label class="checkbox">
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            <button class="btn btn-md btn-tertiary btn-block" type="submit">Sign in</button>
+	    	    
+          </form>
+	  <div>
+            <div id="reset_password" class="link_centered">
+              <a class="reset_password" href="#nogo">Forgot Password</a>
+            </div>
+	  </div>
+	</div>
+	</div> <!-- /container -->
+	<div class="footer_container">
+
+  <div class="container">
+    <!-- Example row of columns -->
+    
+    <hr>
+    
+      <footer>
+        <p>© Company 2014</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="{{base_url}}{{media_url}}assets/js/bootstrap.min.js"></script>
+</body>

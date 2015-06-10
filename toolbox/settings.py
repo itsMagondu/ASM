@@ -8,6 +8,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
+def get_env_variable(var_name):
+    """ Get the environment variable or return exception """
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        error_msg = 'Set the %s environment variable' % var_name
+        raise ImproperlyConfigured(error_msg)
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -25,7 +34,12 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '52.1.4.157',
+    '.52.1.4.157',
+    '.52.1.4.157.',
+]
 
 ADMINS = (
     ('Samuel Magondu', 'MagonduNjenga@gmail.com'), 
@@ -47,8 +61,6 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'siteAdmin',
     'photo',
-    'photologue',
-    'sortedm2m',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -72,12 +84,13 @@ SITE_ID = 1
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.                                            
-        'NAME': 'asm',                      # Or path to database file if using sqlite3.                                                              
-        'USER': 'root',                      # Not used with sqlite3.                                                                                 
-        'PASSWORD': 'bitnami',                  # Not used with sqlite3.                                                                              
-        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.                                         
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.                                                    
+        #Set this as env variables to avoid hardcoding
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.                               
+        'NAME': get_env_variable('DB_NAME'),
+        'USER': get_env_variable('DB_USER'),
+        'PASSWORD': get_env_variable('DB_PASSWORD'),
+        'HOST': get_env_variable('DB_HOST'),
+        'PORT': get_env_variable('DB_PORT')
     }
 }
 
@@ -110,9 +123,9 @@ LOGIN_REDIRECT_URL = BASE_URL
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'html'),
     '/opt/projects/engine/lib/python2.7/site-packages/django/contrib/admin/templates/admin',
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".                                                              
-    # Always use forward slashes, even on Windows.                                                                                                    
-    # Don't forget to use absolute paths, not relative paths.                                                                                         
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".                                                      
+    # Always use forward slashes, even on Windows.                                                                                        
+    # Don't forget to use absolute paths, not relative paths.                                                   
 )
 
 LOGGING = {
@@ -140,6 +153,3 @@ LOGGING = {
 }
 
 
-#Photologue settings
-PHOTOLOGUE_GALLERY_PAGINATE_BY = 20
-PHOTOLOGUE_PHOTO_PAGINATE_BY = 20

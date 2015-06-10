@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('siteAdmin', '__first__'),
+        ('siteAdmin', '0001_initial'),
     ]
 
     operations = [
@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=50)),
-                ('description', models.CharField(max_length=100)),
+                ('description', models.TextField()),
                 ('date', models.DateTimeField(auto_now_add=True)),
                 ('active', models.BooleanField(default=None)),
             ],
@@ -28,20 +28,24 @@ class Migration(migrations.Migration):
             name='Photo',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(max_length=50)),
+                ('title', models.CharField(max_length=100, null=True, blank=True)),
+                ('slug', models.CharField(max_length=100, null=True, blank=True)),
                 ('regularImage', models.ImageField(upload_to=b'photos/regular/%Y/%m/%d')),
                 ('supersizeImage', models.ImageField(null=True, upload_to=b'photos/supersize/%Y/%m/%d', blank=True)),
                 ('previewImage', models.ImageField(null=True, upload_to=b'photos/preview/%Y/%m/%d', blank=True)),
-                ('description', models.CharField(max_length=100)),
+                ('description', models.CharField(max_length=100, null=True, blank=True)),
                 ('price', models.IntegerField(default=0)),
+                ('dpi', models.IntegerField(default=0)),
                 ('format', models.CharField(max_length=10, null=True)),
                 ('date', models.DateTimeField(auto_now_add=True)),
                 ('date_taken', models.DateTimeField(auto_now_add=True)),
+                ('people_in_picture', models.IntegerField(default=0)),
+                ('people_attribute', models.CharField(max_length=100, null=True, blank=True)),
                 ('active', models.BooleanField(default=None)),
                 ('approved', models.BooleanField(default=None)),
                 ('approved_on', models.DateTimeField(null=True)),
-                ('approved_by', models.ForeignKey(related_name=b'approved', to='siteAdmin.UserProfile')),
-                ('category', models.ForeignKey(to='photo.Category')),
+                ('approved_by', models.ForeignKey(related_name='approved', blank=True, to='siteAdmin.UserProfile', null=True)),
+                ('category', models.ForeignKey(blank=True, to='photo.Category', null=True)),
             ],
             options={
             },
@@ -53,7 +57,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('date', models.DateTimeField(auto_now_add=True)),
                 ('active', models.BooleanField(default=None)),
-                ('buyer', models.ForeignKey(to='siteAdmin.UserProfile')),
+                ('buyer', models.ForeignKey(related_name='profile', to='siteAdmin.UserProfile')),
                 ('photo', models.ForeignKey(to='photo.Photo')),
             ],
             options={
@@ -65,9 +69,10 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=50)),
-                ('description', models.CharField(max_length=100)),
+                ('description', models.TextField()),
                 ('date', models.DateTimeField(auto_now_add=True)),
                 ('active', models.BooleanField(default=None)),
+                ('category', models.ForeignKey(blank=True, to='photo.Category', null=True)),
             ],
             options={
             },
@@ -95,7 +100,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='photo',
             name='uploaded_by',
-            field=models.ForeignKey(related_name=b'uploaded', to='siteAdmin.UserProfile'),
+            field=models.ForeignKey(related_name='uploaded', to='siteAdmin.UserProfile'),
             preserve_default=True,
         ),
     ]
