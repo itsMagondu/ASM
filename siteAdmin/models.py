@@ -7,6 +7,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
         
     occupation = models.TextField(null = True)
+    bio = models.TextField(null=True,blank=True)
     isBuyer = models.BooleanField(default = False)
     isSeller = models.BooleanField(default = False)
     credit = models.IntegerField(default = 0)
