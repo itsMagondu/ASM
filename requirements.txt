@@ -1,3 +1,8 @@
 django==1.7
 django-photologue
 mysql-python
+	
+#For documentation
+Sphinx
+#Trying out django-oscar
+django-oscar
