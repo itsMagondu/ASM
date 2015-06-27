@@ -1,0 +1,220 @@
+{% extends "header.html" %}
+{% block title %}ASM | Upload {% endblock %}
+{% block content %}
+
+<div class="container upload_container2">
+  <div class="row clearfix">
+      </br>
+      </br>
+      </br>
+      <div class="col col-md-3 clearfix">
+	<h3>Section 1 - Info</h3>
+	<div class="form-group">
+          <h4>TITLE</h4>
+          <textarea class="form-control prod_title" id="itemDescription" type="text" placeholder="Give this item a descriptive title"></textarea>
+	</div>
+	
+	<div class="form-group">
+          <div id="sizeChoice_title" class="checkbox">
+            <div class="row">
+              <div class="form-group"> 
+		<h4>PICTURE RESOLUTION (DPI)</h4>                             
+		<input type="number" class="form-control" id="dpi" placeholder="">
+              </div>
+            </div>
+        </div>
+      </div><!-- END FORM GROUP SIZE CHOICES -->
+    </div>
+    
+    <div class="col col-md-3 clearfix">
+      <h3>Section 2 - Files</h3>
+      <div class="form-group">    
+        <h4>Regular Size</h4>
+        <label for="exampleInputFile">Upload Image</label>
+        <input type="file" id="exampleInputFile">
+        <h4>SuperSize</h4>
+        <div class="checkbox">
+          <label> <input type="checkbox">Yes</label>
+        </div> 
+        <label for="exampleInputFile">Upload Image</label>
+        <input type="file" id="exampleInputFile">                                        
+      </div>      
+    </div>
+    
+    <div class="col col-md-3 clearfix">
+      <h3>Section 3 - People</h3>
+      <div class="peopleA">
+        <h4>Are there people in this photo?</h4>
+        <div class="checkbox">
+          <label> <input type="checkbox">Yes</label> </div>
+        <h5 class="smaller_h5">How Many?</h5>
+        <div class="form-group ASM_widgets">  
+          <select class="form-control">
+            <option>-</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>More</option>
+          </select>
+        </div>                
+      </div>      
+    </div>
+    
+    <div class="col col-md-3 clearfix">
+      <h3>Section 4 - Legal</h3>
+      <h4>Do you own this work?</h4>
+      <ul class="listfull">
+        <li><input type="radio" name="sex" value="male" checked> Yes</li>
+        <li><input type="radio" name="sex" value="female"> No</li>
+      </ul>  
+      
+      <h4>Did the model(s) sign a model-release form?</h4>
+      <ul class="listfull">
+        <li><input type="radio" name="sex" value="male" checked> Yes</li>
+        <li><input type="radio" name="sex" value="female"> No</li>
+      </ul>      
+    </div>
+  </div>
+  <div class="row clearfix categories_container">
+    <h3>Categories</h3>
+    {% for c in categories %}
+    <div class="col col-md-2 clearfix">
+      <h4>{{c.name}}</h4>
+      {% for s in c.subcategory_set.all %}
+      <div class="checkbox"> <label> <input type="checkbox">{{s.name}}</label> </div>
+      {% endfor %}
+    </div>  
+    {% endfor %}
+    
+    <div class="col col-md-12 clearfix prod_submission">
+      
+      <div class="col col-md-6 clearfix upload_new2">
+        <h4>Do you agree to our <a href="#nogo" target="_blank">Terms of Service?</a></h4>
+        <ul class="listless prod_terms_agreement">
+          <li><input type="checkbox" name="yes" value="Yes" checked> Yes</li>
+        </ul> 
+      </div>     
+      <div class="col col-md-6 clearfix upload_new2_button">
+        <button type="submit" class="btn btn-default buttonA">Upload Item</button>   
+      </div>      
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+
+<style>
+body {
+background-color: #E7E3E3;
+}
+#user_signup_section {
+background: #FFF !important;
+}
+.minh_35 { min-height: 35px; }
+
+</style>

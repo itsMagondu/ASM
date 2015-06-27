@@ -130,6 +130,61 @@ def view(request):
     return render_to_response("view-post.html", args)
 
 @login_required
+def uploader(request):
+    args = {}
+    args['base_url'] = settings.BASE_URL
+    args['media_url'] = settings.MEDIA_URL
+    args['isLoggedIn'] = False
+    args['username']=request.user.username
+    args['categories']=Category.objects.all()
+    args['subcategories']=SubCategory.objects.all()
+    
+    if request.user.is_authenticated():
+        args['isLoggedIn'] = True
+    
+    if not (request.method == "POST"):
+        return render_to_response("upload-V2.html", args)
+    
+    title = request.POST.get('title',None)
+    tags = request.POST.get('tags',None)
+    category = request.POST.get('category',None)
+    subcategory = request.POST.get('subcategory',None)
+    supersize = request.FILES['supersize']
+    regular = request.FILES['regular']
+    dpi = request.POST.get('dpi',None)
+    number = request.POST.get('people_number',None)
+    attribute = request.POST.get('people_type_group',None)
+    
+    try:
+        p = Photo(
+            title = title,
+            regularImage = regular,
+            supersizeImage = supersize,
+            dpi = dpi,
+            uploaded_by = request.user.userprofile,
+            people_in_picture = number,
+            people_attribute = attribute,
+            category_id = category,
+            subcategory_id = subcategory,
+            active=True,
+            approved = False,
+            approved_by = request.user.userprofile,
+            )
+        
+        p.save()
+        #Redirect to view page with watermaked image
+        logger.info('Successfully added image with ID: '+str(p.id))
+        args['image'] = p
+        args['success'] = "Image uploaded successfully"
+        return render_to_response("view-post.html", args)
+
+    except Exception, e:
+        #Log the error and send it via email
+        logger.error('Failed to create image',exc_info=True)
+        args['error'] = "An error occured. Please contact the admin"
+        return render_to_response("upload-V2.html", args)
+
+@login_required
 def search(request):
     args = {}
     args['base_url'] = settings.BASE_URL
