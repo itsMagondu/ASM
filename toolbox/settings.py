@@ -61,6 +61,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'siteAdmin',
     'photo',
+    'wagtail',
 )
 
 MIDDLEWARE_CLASSES = (

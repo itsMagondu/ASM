@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response,render
 from django.conf import settings
 from django.http import *
 
@@ -143,7 +143,7 @@ def uploader(request):
         args['isLoggedIn'] = True
     
     if not (request.method == "POST"):
-        return render_to_response("upload-V2.html", args)
+        return render_to_response("upload-V3.html", args)
     
     title = request.POST.get('title',None)
     tags = request.POST.get('tags',None)
@@ -182,7 +182,7 @@ def uploader(request):
         #Log the error and send it via email
         logger.error('Failed to create image',exc_info=True)
         args['error'] = "An error occured. Please contact the admin"
-        return render_to_response("upload-V2.html", args)
+        return render_to_response("upload-V3.html", args)
 
 @login_required
 def search(request):
