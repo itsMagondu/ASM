@@ -47,9 +47,9 @@ INSTALLED_APPS = (
     'wagtail.wagtailredirects',
     'wagtail.wagtailforms',
 
+    'apps.photo',
     'search',
     'home',
-    'apps.photo',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -94,10 +94,14 @@ WSGI_APPLICATION = 'wagasm.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'wagasm',
+        'USER':'wagasm',
+        'PASSWORD':'wagasm',
+        'HOST':'127.0.0.1',
+        'PORT':'',
+        }
     }
-}
 
 
 # Internationalization

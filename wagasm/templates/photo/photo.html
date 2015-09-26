@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load static %}
+
+{% block body_class %}photo-page{% endblock %}
+
+{% block content %}
+
+    <div class="breaker"></div>
+    <div class="container main_container_A">
+          <!-- Example row of columns -->
+          <div class="row">
+            <div class="col-md-5 image_preview">
+              <figure>
+                <!--<img src="{{base_url}}{{media_url}}assets/img/single_sample_1.jpg">-->
+                {% if self.image %}
+				{% image self.image width-400 %}
+				{% endif %}
+					<!--<img src="{{self.image.f}}">-->
+              </figure>
+              <section class="social_share">
+                <ul class="social_share listless inlinelist">
+                  <li class="share_label">SHARE&mdash;</li>
+                  <li><a href="#nogo">Facebook</a></li>
+                  <li><a href="#nogo">Twitter</a></li>
+                  <li><a href="#nogo">G-Plus</a></li>
+                  <li><a href="#nogo">Pinterest</a></li>
+                  <li><a href="#nogo">Email</a></li>
+                </ul>
+              </section>
+            </div>
+
+            <div class="col-md-5 preview_details">
+              <ul class="preview_details_list listless">
+                <li>
+                  <h3>{{self.title}}</h3>
+                  <p>Image ID: <b>{{self.id}}</b></p>
+                </li>  
+
+                <li>  
+                  <h4>Release Information:</h4>
+                  <p>Editorial Credit: <a href="#nogo">{{self.owner.username}}</a> <span class="pipe_separator"> / </span>Copyright: <a href="#nogo">{{self.owner.username}}</a></p>
+                </li>  
+              </ul> 
+
+              <div class="error-notice">
+                <div class="oaerror info">
+                  <strong>Info</strong> - Editorial Use Only. Use of this image in advertising or for promotional purposes is prohibited.
+                </div>
+              </div>               
+
+                <table class="table image_sizes">
+                  <tbody>
+                    <tr class="">
+                      <td>
+                        <input checked="checked" id="image_size_comp" name="image[size]" type="radio" value="comp">
+                      </td>
+
+                      <td>
+                        <label class="display_name" for="image_size_comp">Normal Size</label>
+                      </td>
+
+                      <td>
+                        <label class="filesize" for="image_size_comp">1000px X 667px<span class="pipe_separator"> / </span>(300dpi)<span class="pipe_separator"> / </span>6.0 MB
+                        </label>
+                      </td>
+                    </tr>
+
+                    <tr class="">
+                      <td>
+                        <input id="image_size_low" name="image[size]" type="radio" value="low">
+                      </td>
+
+                      <td>
+                        <label class="display_name" for="image_size_low">Super Size</label>
+                      </td>
+
+                      <td>
+                        <label class="filesize" for="image_size_low">5000px X 6267px<span class="pipe_separator"> / </span>(300dpi)<span class="pipe_separator"> / </span>28 MB
+                        </label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+
+
+              <p><a class="btn btn-default buttonB" href="#" role="button">Download Image »</a></p>              
+            </div>
+
+            <div class="col-md-2 preview_details">
+              <ul class="listless blocklist">
+
+                <li>
+                  <button class="btn btn-default btn-sm" data-title="Edit" data-toggle="modal" data-target="#edit">
+                    <span class="glyphicon glyphicon-pencil"></span> Edit Item
+                  </button>
+                </li>  
+
+                <li>
+                  <button class="btn btn-default btn-sm" data-title="Delete">
+                    <span class="glyphicon glyphicon-trash"></span> Delete Item
+                  </button>
+                </li>  
+              </ul>
+            </div>
+          </div>
+
+
+
+          <!-- Example row of columns -->
+          <div class="row clearfix similar_thumbs same_artist_thumbs">
+            <h4 class="title_C title_C1">Same Artist   <span>|</span>    <a href="#nogo">See All &raquo;</a></h4>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img1.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img2.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img3.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img1.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img2.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img3.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img1.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img2.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img3.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img1.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img2.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img3.jpg"></a></figure></div>
+          </div>
+
+
+
+
+
+          <!-- Example row of columns -->
+          <div class="row clearfix similar_thumbs same_artist_thumbs">
+            <h4 class="title_C title_C1">Similar Image   <span>|</span>    <a href="#nogo">See All &raquo;</a></h4>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img1.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img2.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img3.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img1.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img2.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img3.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img1.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img2.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img3.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img1.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img2.jpg"></a></figure></div>
+            <div class="col-md-1 image_preview_thumb"><figure><a href="#nogo"><img src="{{base_url}}{{media_url}}assets/img/img3.jpg"></a></figure></div>
+          </div>
+
+
+
+
+
+
+          <!-- Example row of columns -->
+          <div class="row clearfix same_tags tag_column">
+            <h4 class="title_C title_C1">Keywords</h4>
+              <section class="item_tags title_C1">
+                <a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a><a href="#nogo">Maasai</a> <a href="#nogo">African Men</a> <a href="#nogo">Men</a>
+              </section>       
+          </div>
+
+
+
+          <!-- Example row of columns -->
+          <div class="row clearfix similar_thumbs same_artist_thumbs">
+            <h4 class="title_C title_C1">View Images by Category</h4>
+                  <ul class="row clearfix listless category_listing_A">
+                    <li class="col-sm-3">
+                        <ul>
+                            <li class="dropdown-header">Glyphicons</li>
+                            <li><a href="#">Available glyphs</a></li>
+                            <li class="disabled"><a href="#">How to use</a></li>
+                            <li><a href="#">Examples</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Dropdowns</li>
+                            <li><a href="#">Example</a></li>
+                            <li><a href="#">Aligninment options</a></li>
+                            <li><a href="#">Headers</a></li>
+                            <li><a href="#">Disabled menu items</a></li>
+                        </ul>
+                    </li>
+                    <li class="col-sm-3">
+                        <ul>
+                            <li class="dropdown-header">Button groups</li>
+                            <li><a href="#">Basic example</a></li>
+                            <li><a href="#">Button toolbar</a></li>
+                            <li><a href="#">Sizing</a></li>
+                            <li><a href="#">Nesting</a></li>
+                            <li><a href="#">Vertical variation</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Button dropdowns</li>
+                            <li><a href="#">Single button dropdowns</a></li>
+                        </ul>
+                    </li>
+                    <li class="col-sm-3">
+                        <ul>
+                            <li class="dropdown-header">Input groups</li>
+                            <li><a href="#">Basic example</a></li>
+                            <li><a href="#">Sizing</a></li>
+                            <li><a href="#">Checkboxes and radio addons</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Navs</li>
+                            <li><a href="#">Tabs</a></li>
+                            <li><a href="#">Pills</a></li>
+                            <li><a href="#">Justified</a></li>
+                        </ul>
+                    </li>
+                    <li class="col-sm-3">
+                        <ul>
+                            <li class="dropdown-header">Navbar</li>
+                            <li><a href="#">Default navbar</a></li>
+                            <li><a href="#">Buttons</a></li>
+                            <li><a href="#">Text</a></li>
+                            <li><a href="#">Non-nav links</a></li>
+                            <li><a href="#">Component alignment</a></li>
+                            <li><a href="#">Fixed to top</a></li>
+                            <li><a href="#">Fixed to bottom</a></li>
+                            <li><a href="#">Static top</a></li>
+                            <li><a href="#">Inverted navbar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+          </div>
+
+
+    </div> <!-- /container -->
+{% endblock %}
+

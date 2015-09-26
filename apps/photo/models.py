@@ -21,16 +21,13 @@ class PhotoTag(TaggedItemBase):
     content_object = ParentalKey('photo.Photo', related_name='tagged_items')
 
 class Category(Page):
-    name = models.CharField(max_length=200)
     description = RichTextField(blank=True)
 
     search_fields = Page.search_fields + (
-        index.SearchField('name'),
         index.SearchField('description'),
     )
 
     content_panels = Page.content_panels + [
-        FieldPanel('name'),
         FieldPanel('description', classname="full"),
     ]
 
@@ -49,7 +46,7 @@ class Photo(Page):
 
     #This should only be seen by the Admin
     approved = models.BooleanField(default=False)
-    approval_date = models.DateField("Approval date")
+    approval_date = models.DateField("Approval date",null=True,blank=True)
     
     category = models.ForeignKey('photo.Category', null=True, blank=True ,related_name='+',on_delete=models.SET_NULL )
     

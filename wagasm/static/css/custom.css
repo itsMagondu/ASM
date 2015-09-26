@@ -1,0 +1,58 @@
+/* CUSTOM CSS - HEADER SECTION */
+.navbar-brand {
+float: left;
+padding: 2px 20px 0px 0px;
+font-size: 18px;
+line-height: 20px;
+height: 20px;
+}
+.jumbotron_2 {
+margin: 80px 0px;
+}
+.registration_page li a {
+text-align: center;
+}
+.nav.nav-tabs.registration_page li {
+width: 50%;
+}
+#buyer_signup_section {
+padding: 30px;
+}
+.pad30 {
+padding: 30px;	
+}
+
+.upload_container2 {
+    background-color: #FFF;
+    margin-top: 100px;
+}
+ul.listfull li {
+    display: inline-block;
+    margin-right: 15px;
+}
+ul.listfull {
+    padding-left: 0px;
+    list-style: none;
+}
+.categories_container {
+    padding: 20px;
+    background-color: #F9F3FA;
+}
+.prod_submission {
+    padding: 0px;
+}
+.upload_new2_button button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    min-height: 50px;
+}
+.upload_container2 h3 {
+    font-weight: 100;
+    margin-bottom: 20px;
+    color: #EA3495;
+}
+.upload_new2 {
+    text-align: right;
+    margin-top: 15px;
+}

@@ -1,35 +1,252 @@
-{% load static wagtailuserbar %}
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailadmin_tags %}
 
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}{% block title_suffix %}{% endblock %}</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+{% block head %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="African Stock Photos">
+    <meta name="author" content="Samuel Magondu">
+    <link rel="shortcut icon" href="{{base_url}}{{media}}assets/img/favicon.ico">
 
-        {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/wagasm.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'assets/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/css/custom-media-queries.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/custom.css' %}" rel="stylesheet">
 
-        {% block extra_css %}
-            {# Override this in templates to add extra stylesheets #}
-        {% endblock %}
-    </head>
 
-    <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
-        {% block content %}{% endblock %}
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+{% endblock head %}
+<body style="">
 
-        {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/wagasm.js' %}"></script>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{base_url}}"><img src="{% static 'assets/img/logo.png' %}" alt="African Stock Media.com"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="{{base_url}}about">About</a></li>
+            <li><a href="{{base_url}}photo/add/">Upload</a></li>
+            <li><a href="{{base_url}}photo/search/">Search</a></li>
+            <li><a href="{{base_url}}contact">Contact</a></li>
+            <li class="divider"></li>
+          </ul>
+	  
+          {% if isLoggedIn %}
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Hello {{ username|title }} <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{base_url}}photo/profile">Profile</a></li>
+                <li><a href="{{base_url}}admin/">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+	  
+          {% else %}
+	  
+          <ul class="nav navbar-nav navbar-right">
+            <li> <a href="{{base_url}}admin/"><span class="glyphicon glyphicon-user"></span> Login </a>
+            </li>
+          </ul>
+          {% endif %}
+	</div>
+      </div>
+    </div> <!-- /container -->
+	  
+	  {% block content %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron home_masthead">
+      <div class="container">
+	
+        <h1>African Stock Photography</h1>
+        <p>Discover the best of commercial & licensed African Stock Photogaphy, Illustration Artwork, templates and a variety of Media!</p>
+	
+        <div class="jumbotron_3">
+          <div id="search_bar" class="large_search_bar">
+            <ul class="search_bar"> 
 
-        {% block extra_js %}
-            {# Override this in templates to add extra javascript #}
-        {% endblock %}
-    </body>
-</html>
+              <li>
+                <div class="input-group input-group-lg">
+                  <input type="text" class="form-control" id="inputSearch1" placeholder="Enter Keywords..">
+                </div>
+              </li>
+                
+              <li>
+              <div class="input-group input-group-lg">
+                <select class="form-control">
+                  <option>Any Type</option>
+                  <option>Photograph</option>
+                  <option>Vector Illustration</option>
+                  <option>Photoshop Template</option>
+                </select>
+              </div>  
+              </li>
+
+              <li>
+                <div class="input-group input-group-lg">
+                  <select class="form-control">
+                    <option>Any Category</option>
+                    <option>Press</option>
+                    <option>Easter</option>
+                    <option>Kenya@50</option>
+                  </select>
+                </div>
+              </li>
+                
+              <li><a class="btn btn-primary btn-lg search_button" role="button">Search <span class="glyphicon glyphicon-search"></span></a></li>
+
+
+            </ul> 
+          </div>  
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+
+
+  <div class="row first_preview_row">
+
+    <div class="col-md-6 home_featured_categories main_preview_1">
+      <h3 class="preview_1 home_preview">Press</h3>
+        <div class="information_container"> <a href="#nogo">
+        <div class="information">
+          <h3>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</h3>
+        </div>
+        </a> </div> 
+      <img src="{% static 'assets/img/sample5.jpg' %}" width="100%" height="auto">
+    </div>
+
+    <div class="col-md-4 home_featured_categories main_preview_2">
+      <h3 class="preview_2 home_preview">Office</h3>
+      <div class="information_container"> <a href="#nogo">
+        <div class="information">
+          <h3>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</h3>
+        </div>
+      </a></div>  
+        <img src="{% static 'assets/img/sample3.jpg' %}" width="100%" height="auto">
+    </div>
+    <div class="col-md-2 home_featured_categories main_preview_3">
+      <div class="col-md-12 home_featured_categories main_preview_3A">
+        <h3 class="preview_3 home_preview">Landscapes</h3>
+          <div class="information_container"> <a href="#nogo">
+            <div class="information">
+              <h3>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</h3>
+            </div>
+          </a></div>         
+          <img src="{% static 'assets/img/sample10.jpg' %}" width="100%" height="auto">
+      </div>
+      <div class="col-md-12 home_featured_categories main_preview_3B">
+        <h3 class="preview_4 home_preview">Cities</h3>
+          <div class="information_container">
+            <div class="information">
+              <h3>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</h3>
+            </div>
+          </div>            
+          <img src="{% static 'assets/img/sample4.jpg' %}" width="100%" height="auto">
+      </div>
+    </div>
+  </div>
+   <div class="row second_preview_row">
+
+    <div class="col-md-4 home_featured_categories main_preview_4">
+        <h3 class="preview_5 home_preview">Children</h3>
+          <div class="information_container">
+            <div class="information">
+              <h3>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</h3>
+            </div>
+          </div>            
+        <img src="{% static 'assets/img/sample6.jpg' %}" width="100%" height="auto">
+    </div>
+    <div class="col-md-4 home_featured_categories main_preview_5">
+        <h3 class="preview_6 home_preview">Government</h3>
+          <div class="information_container">
+            <div class="information">
+              <h3>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</h3>
+            </div>
+          </div>            
+        <img src="{% static 'assets/img/sample1.jpg' %}" width="100%" height="auto">      
+    </div>
+    <div class="col-md-4 home_featured_categories main_preview_6">
+        <h3 class="preview_7 home_preview">Press</h3>
+          <div class="information_container">
+            <div class="information">
+              <h3>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</h3>
+            </div>
+          </div>            
+        <img src="{% static 'assets/img/sample7.jpg' %}" width="100%" height="auto">
+    </div>  
+  </div>
+
+</div> <!-- /container -->
+<div class="footer_container">
+
+<div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus <a href="http://getbootstrap.com/css/#overview" target="_blank">commodo</a>, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div>
+      </div>
+
+      <hr>
+{% endblock %}    
+    <footer>
+      <p>© Company 2014</p>
+    </footer>
+<!-- Bootstrap core JavaScript                                                       
+     ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.masonry.min.js' %}"></script>
+<script src="{% static 'assets/js/imagesloaded.min.js' %}"></script>
+
+<script>
+  $(function(){
+  
+  var $container = $('#grid_container');
+  
+  $container.imagesLoaded( function(){
+  $container.masonry({
+  itemSelector : '.masonryImage'
+  });
+  });
+  
+  });
+</script>
+
+</body>
