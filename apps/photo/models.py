@@ -78,3 +78,21 @@ class Photo(Page):
 Photo.promote_panels = Page.promote_panels +[
     FieldPanel('tags'),
 ]
+
+class PhotoIndex(Page):
+    intro = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('intro', classname="full"),
+    ]
+
+    @property
+    def photos(self):
+        '''Due to a late change of requirements, this page is used for more than photos. As such it works       
+        by getting all children unlike before where it got photos only. Shall need to be redesinged and 
+        reworked to be clear. THis was copy-pasted. Modify to fit scope'''
+        
+        p = self.get_children().live()
+        p = p.order_by('-id')
+
+        return p
