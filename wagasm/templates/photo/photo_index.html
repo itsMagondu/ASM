@@ -152,7 +152,9 @@
 	      <div class="masonryImage masonry-brick" style="">
 		<a href="#nogo">
 				<div class="grid_thumb">
-					{% image p.photo.image fill-850x400 %}
+					{% image p.photo.image fill-850x400 as tmp_image %}
+					<img src="{{ tmp_photo.url }}" width="{{ tmp_photo.width }}"
+					     height="{{ tmp_photo.height }}" alt="{{ tmp_photo.alt }}" class="my-custom-class" />
 				</div>
 			</a>
 		<div class="folio_grid_links folio_links">
