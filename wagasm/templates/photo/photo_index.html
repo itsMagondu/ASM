@@ -150,13 +150,13 @@
 	  
 	      
 	      <div class="masonryImage masonry-brick" style="">
-		<a href="#nogo">
-				<div class="grid_thumb">
-					{% image p.photo.image fill-850x400 as tmp_photo %}
-					<img src="{{ tmp_photo.url }}" width="{{ tmp_photo.width }}"
-					     height="{{ tmp_photo.height }}" alt="{{ tmp_photo.alt }}" class="my-custom-class" />
-				</div>
-			</a>
+		{% image p.photo.image fill-850x400 as tmp_photo %}
+		<a href="{{p.url}}">
+		  <div class="grid_thumb">
+		    <img src="{{ tmp_photo.url }}" width="{{ tmp_photo.width }}"
+			 height="{{ tmp_photo.height }}" alt="{{ tmp_photo.alt }}" class="my-custom-class" />
+		  </div>
+		</a>
 		<div class="folio_grid_links folio_links">
 		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-asterisk"></span> {{photo.price}} </a>
 		  <a href="#nogo" class="btn-sm"> <span class="glyphicon glyphicon-hand-down"></span> Add to Lightbox </a>
